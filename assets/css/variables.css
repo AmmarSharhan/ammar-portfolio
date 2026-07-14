@@ -1,0 +1,24 @@
+:root {
+
+    /* ===== Colors ===== */
+
+    --color-primary: #2563EB;
+    --color-secondary: #1E40AF;
+
+    --color-background: #F8FAFC;
+    --color-surface: #FFFFFF;
+
+    --color-text: #111827;
+    --color-text-light: #6B7280;
+
+    /* ===== Fonts ===== */
+
+    --font-ar: "IBM Plex Sans Arabic", sans-serif;
+    --font-en: "Inter", sans-serif;
+
+    /* ===== Spacing ===== */
+
+    --section-padding: 100px;
+    --border-radius: 12px;
+
+}
