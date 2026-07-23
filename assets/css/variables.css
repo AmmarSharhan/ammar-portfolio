@@ -6,14 +6,14 @@
 
     /* Colors */
 
-    --primary: #2563eb;
-    --primary-dark: #1d4ed8;
-    --primary-light: #dbeafe;
+    --primary: #1b1464;
+    --primary-dark: #103aaf;
+    --primary-light: #8d9096;
 
-    --secondary: #0f172a;
+    --secondary: #1b1464;
 
-    --text: #334155;
-    --text-light: #64748b;
+    --text: #1b1464;
+    --text-light: #1b1464;
 
     --background: #f8fafc;
     --white: #ffffff;
