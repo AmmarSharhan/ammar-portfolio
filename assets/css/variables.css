@@ -1,44 +1,86 @@
 /* ==========================================
-   Design Tokens
+   DESIGN SYSTEM v2.1
 ========================================== */
 
-:root {
+:root{
 
-    /* Colors */
+    /* ========= Colors ========= */
 
-    --primary: #1b1464;
-    --primary-dark: #103aaf;
-    --primary-light: #8d9096;
+    --primary:#2b277c;
+    --primary-dark:#1f1c61;
+    --primary-light:#eef0ff;
 
-    --secondary: #1b1464;
+    --secondary:#6c63ff;
+    --accent:#00bcd4;
 
-    --text: #1b1464;
-    --text-light: #1b1464;
+    --background:#f8fafc;
+    --surface:#ffffff;
 
-    --background: #f8fafc;
-    --white: #ffffff;
-    --border: #e2e8f0;
+    --text:#0f172a;
+    --text-light:#64748b;
 
-    /* Typography */
+    --border:#e2e8f0;
 
-    --font-family: "Cairo", sans-serif;
+    --success:#16a34a;
+    --warning:#f59e0b;
+    --danger:#dc2626;
 
-    /* Radius */
+    /* ========= Typography ========= */
 
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 20px;
+    --font-family:'Cairo',sans-serif;
 
-    /* Shadows */
+    --fs-xs:.75rem;
+    --fs-sm:.875rem;
+    --fs-md:1rem;
+    --fs-lg:1.125rem;
+    --fs-xl:1.5rem;
+    --fs-2xl:2rem;
+    --fs-3xl:2.75rem;
+    --fs-4xl:3.5rem;
 
-    --shadow-sm: 0 5px 15px rgba(0,0,0,.06);
+    --fw-regular:400;
+    --fw-medium:500;
+    --fw-semibold:600;
+    --fw-bold:700;
+    --fw-extrabold:800;
 
-    --shadow-md: 0 10px 30px rgba(0,0,0,.08);
+    /* ========= Radius ========= */
 
-    --shadow-lg: 0 20px 50px rgba(0,0,0,.12);
+    --radius-sm:10px;
+    --radius-md:16px;
+    --radius-lg:24px;
+    --radius-xl:32px;
+    --radius-round:999px;
 
-    /* Transition */
+    /* ========= Spacing ========= */
 
-    --transition: .3s ease;
+    --space-1:4px;
+    --space-2:8px;
+    --space-3:12px;
+    --space-4:16px;
+    --space-5:24px;
+    --space-6:32px;
+    --space-7:48px;
+    --space-8:64px;
+    --space-9:96px;
+    --space-10:120px;
+
+    /* ========= Shadows ========= */
+
+    --shadow-xs:0 2px 6px rgba(15,23,42,.04);
+
+    --shadow-sm:0 8px 20px rgba(15,23,42,.06);
+
+    --shadow-md:0 12px 32px rgba(15,23,42,.08);
+
+    --shadow-lg:0 18px 40px rgba(15,23,42,.12);
+
+    /* ========= Container ========= */
+
+    --container:1200px;
+
+    /* ========= Transition ========= */
+
+    --transition:300ms ease;
 
 }
