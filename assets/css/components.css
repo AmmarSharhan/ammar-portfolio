@@ -248,7 +248,10 @@
 
     box-shadow:var(--shadow-sm);
 
-    transition:var(--transition);
+    transition:
+    transform .30s ease,
+    box-shadow .30s ease,
+    border-color .30s ease;
 
     border:1px solid transparent;
 
@@ -293,7 +296,10 @@
 
     box-shadow:var(--shadow-sm);
 
-    transition:var(--transition);
+    transition:
+    transform .30s ease,
+    box-shadow .30s ease,
+    border-color .30s ease;
 
 }
 
@@ -354,6 +360,18 @@
     font-weight:700;
 
 }
+.project-card img{
+
+    transition:
+        transform .45s ease;
+
+}
+
+.project-card:hover img{
+
+    transform:scale(1.05);
+
+}
 /* ==========================================
    Skills Cards
 ========================================== */
@@ -368,7 +386,10 @@
 
     box-shadow:var(--shadow-sm);
 
-    transition:var(--transition);
+    transition:
+    transform .30s ease,
+    box-shadow .30s ease,
+    border-color .30s ease;
 
 }
 
@@ -493,7 +514,10 @@
 
     box-shadow:var(--shadow-sm);
 
-    transition:var(--transition);
+    transition:
+    transform .30s ease,
+    box-shadow .30s ease,
+    border-color .30s ease;
 
 }
 
@@ -766,5 +790,142 @@
 .logo:hover img{
 
     transform:scale(1.05);
+
+}
+/* ==========================================
+   Mobile Menu Button
+========================================== */
+
+.menu-toggle{
+
+    display:none;
+
+    width:46px;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--surface);
+
+    box-shadow:var(--shadow-sm);
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    transition:var(--transition);
+
+}
+
+.menu-toggle:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+/* ==========================================
+   Mobile Navigation
+========================================== */
+
+@media (max-width:768px){
+
+    .nav{
+
+        position:absolute;
+
+        top:80px;
+
+        right:0;
+
+        width:100%;
+
+        background:var(--surface);
+
+        padding:24px;
+
+        box-shadow:var(--shadow-md);
+
+        opacity:0;
+
+        visibility:hidden;
+
+        transform:translateY(-12px);
+
+        transition:
+            opacity .3s ease,
+            transform .3s ease,
+            visibility .3s ease;
+
+    }
+
+    .nav.nav-open{
+
+        opacity:1;
+
+        visibility:visible;
+
+        transform:translateY(0);
+
+    }
+
+    .nav ul{
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:22px;
+
+    }
+
+}
+/* ==========================================
+   Active Navigation
+========================================== */
+
+.nav a.active{
+
+    color:var(--primary);
+
+}
+
+.nav a.active::after{
+
+    width:100%;
+
+}
+/* ==========================================
+   Button Micro Interactions
+========================================== */
+
+.btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.btn:active{
+
+    transform:translateY(0);
 
 }
