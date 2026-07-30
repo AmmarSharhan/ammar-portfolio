@@ -1,12 +1,158 @@
 /* ===========================================================
    RESPONSIVE
-
-   1200px
-
-   992px
-
-   768px
-
-   576px
-
+   Ammar Sharhan Portfolio
 =========================================================== */
+
+/* ===============================
+   Large Desktop
+================================ */
+
+@media (max-width:1200px){
+
+    .container{
+        width:min(95%,1200px);
+    }
+
+}
+
+/* ===============================
+   Laptop
+================================ */
+
+@media (max-width:992px){
+
+    .hero-container{
+        grid-template-columns:1fr;
+        gap:60px;
+        text-align:center;
+    }
+
+    .hero-image{
+        order:-1;
+    }
+
+    .about-grid,
+    .contact-wrapper{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .services-grid,
+    .projects-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .skills-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    /* زر القائمة */
+    .menu-toggle{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    /* القائمة */
+    .nav{
+        display:none;
+        position:absolute;
+        top:80px;
+        right:0;
+        width:100%;
+        background:var(--surface);
+        padding:24px;
+        box-shadow:var(--shadow-md);
+    }
+
+    /* عند فتح القائمة */
+    .nav.nav-open{
+        display:block;
+    }
+
+    .nav ul{
+        display:flex;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .hero-content h1{
+        font-size:48px;
+    }
+
+    .hero-content h2{
+        font-size:24px;
+    }
+
+    .hero-image-wrapper{
+        width:320px;
+        height:320px;
+    }
+
+    .services-grid,
+    .projects-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:15px;
+    }
+
+}
+/* ===============================
+   Mobile
+================================ */
+
+@media (max-width:576px){
+
+    .hero{
+
+        padding:40px 0;
+
+    }
+
+    .hero-content h1{
+
+        font-size:38px;
+
+    }
+
+    .hero-content p{
+
+        font-size:16px;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+    }
+
+}
