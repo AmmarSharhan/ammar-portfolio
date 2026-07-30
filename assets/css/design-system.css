@@ -1,51 +1,86 @@
-/* ==========================================
-   DESIGN SYSTEM v2.1
+/* ===========================================================
+   DESIGN SYSTEM
    Ammar Sharhan Portfolio
-========================================== */
 
-:root{
+   هذا الملف مخصص لتوثيق نظام التصميم فقط.
 
-    /* Brand */
-    --color-primary:#2b277c;
-    --color-primary-dark:#1f1c61;
-    --color-secondary:#6c63ff;
-    --color-accent:#00bcd4;
+   جميع المتغيرات (Colors / Typography / Radius / Shadows)
+   موجودة داخل:
 
-    /* Surfaces */
-    --color-background:#f8fafc;
-    --color-surface:#ffffff;
+   assets/css/variables.css
 
-    /* Text */
-    --color-text:#0f172a;
-    --color-text-muted:#64748b;
+   يمنع تعريف أي متغيرات CSS داخل هذا الملف حتى لا يحدث
+   تعارض أو تكرار.
 
-    /* Border */
-    --color-border:#e2e8f0;
+=========================================================== */
 
-    /* Status */
-    --color-success:#16a34a;
-    --color-warning:#f59e0b;
-    --color-danger:#dc2626;
+/*
+============================================================
 
-    /* Radius */
-    --radius-sm:10px;
-    --radius-md:16px;
-    --radius-lg:24px;
-    --radius-xl:32px;
-    --radius-pill:999px;
+COLOR PALETTE
 
-    /* Shadow */
-    --shadow-xs:0 2px 6px rgba(15,23,42,.04);
-    --shadow-sm:0 8px 20px rgba(15,23,42,.06);
-    --shadow-md:0 12px 32px rgba(15,23,42,.08);
-    --shadow-lg:0 18px 40px rgba(15,23,42,.12);
+Primary      : #2b277c
+Primary Dark : #1f1c61
+Primary Light: #eef0ff
 
-    /* Motion */
-    --transition-fast:200ms ease;
-    --transition-normal:300ms ease;
-    --transition-slow:500ms ease;
+Secondary    : #6c63ff
+Accent       : #00bcd4
 
-    /* Layout */
-    --container-width:1200px;
-    --header-height:80px;
-}
+Background   : #f8fafc
+Surface      : #ffffff
+
+Text         : #0f172a
+Text Light   : #64748b
+
+Border       : #e2e8f0
+
+============================================================
+
+TYPOGRAPHY
+
+Font : Cairo
+
+Weights
+
+400 Regular
+500 Medium
+600 SemiBold
+700 Bold
+800 ExtraBold
+
+============================================================
+
+SPACING
+
+4
+8
+12
+16
+24
+32
+48
+64
+96
+120
+
+============================================================
+
+RADIUS
+
+10
+16
+24
+32
+999
+
+============================================================
+
+SHADOWS
+
+XS
+SM
+MD
+LG
+
+============================================================
+*/
