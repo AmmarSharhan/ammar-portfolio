@@ -1,3 +1,19 @@
+/* ===========================================================
+   LAYOUT
+   يحتوي فقط على:
+
+   Header
+   Hero Layout
+   About Layout
+   Skills Layout
+   Services Layout
+   Projects Layout
+   Experience Layout
+   Contact Layout
+   Footer Layout
+
+   ممنوع وضع تصميم البطاقات هنا.
+=========================================================== */
 /* ==========================================
    Layout
 ========================================== */
@@ -8,7 +24,7 @@
 }
 
 /* ==========================================
-   Header
+   Header Layout
 ========================================== */
 
 .header{
@@ -23,7 +39,7 @@
 
     height:80px;
 
-    background:rgba(255,255,255,.75);
+    background:rgba(255,255,255,.78);
 
     backdrop-filter:blur(18px);
 
@@ -31,11 +47,24 @@
 
     border-bottom:1px solid rgba(226,232,240,.7);
 
-    box-shadow:0 4px 20px rgba(15,23,42,.04);
+    box-shadow:0 6px 24px rgba(15,23,42,.05);
 
     z-index:1000;
 
-    transition:var(--transition);
+    transition:
+        background .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+}
+
+.header.scrolled{
+
+    background:rgba(255,255,255,.95);
+
+    border-bottom:1px solid rgba(226,232,240,.95);
+
+    box-shadow:0 10px 30px rgba(15,23,42,.08);
 
 }
 
@@ -45,23 +74,25 @@
 
     display:flex;
 
-    align-items:center;
-
     justify-content:space-between;
 
-    }
+    align-items:center;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+}
 
 .logo img{
 
     width:58px;
 
-    transition:var(--transition);
-
-}
-
-.logo img:hover{
-
-    transform:scale(1.05);
+    display:block;
 
 }
 
@@ -72,49 +103,6 @@
     align-items:center;
 
     gap:36px;
-
-}
-
-.nav a{
-
-    position:relative;
-
-    font-weight:600;
-
-    color:var(--text);
-
-    transition:var(--transition);
-
-}
-.nav a::after{
-
-    content:"";
-
-    position:absolute;
-
-    right:0;
-
-    bottom:-8px;
-
-    width:0;
-
-    height:2px;
-
-    background:var(--primary);
-
-    transition:var(--transition);
-
-}
-
-.nav a:hover::after{
-
-    width:100%;
-
-}
-
-.nav a:hover{
-
-    color:var(--primary);
 
 }
 
@@ -464,5 +452,18 @@
     
 
     align-items:center;
+
+}
+/* ==========================================
+   Header Scroll State
+========================================== */
+
+.header.scrolled{
+
+    background:rgba(255,255,255,.95);
+
+    border-bottom:1px solid rgba(226,232,240,.95);
+
+    box-shadow:0 10px 30px rgba(15,23,42,.08);
 
 }

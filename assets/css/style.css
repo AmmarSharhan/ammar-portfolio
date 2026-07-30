@@ -1,65 +1,45 @@
+/* ===========================================================
+   GLOBAL STYLE
+
+   يحتوي فقط على:
+
+   body
+
+   html
+
+   selection
+
+   scrollbar
+
+   أي تنسيقات عامة للموقع.
+
+=========================================================== */
+/* ===========================================================
+   GLOBAL STYLE
+=========================================================== */
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-
-    padding-top:80px;
-
+    font-family:var(--font-family);
+    background:var(--background);
+    color:var(--text);
+    padding-top:0;
+    overflow-x:hidden;
 }
 
-.icon-btn{
-
-    width:44px;
-
-    height:44px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:var(--surface);
-
-    box-shadow:var(--shadow-sm);
-
-    cursor:pointer;
-
-    transition:var(--transition);
-
+img{
+    max-width:100%;
+    display:block;
 }
 
-.icon-btn:hover{
-
-    background:var(--primary);
-
-    color:#fff;
-
+a{
+    text-decoration:none;
+    color:inherit;
 }
 
-.btn{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:12px 24px;
-
-    border-radius:12px;
-
-    font-weight:700;
-
-}
-
-.btn-primary{
-
-    background:var(--primary);
-
-    color:#fff;
-
-    transition:var(--transition);
-
-}
-
-.btn-primary:hover{
-
-    background:var(--primary-dark);
-
+button{
+    font-family:inherit;
 }
