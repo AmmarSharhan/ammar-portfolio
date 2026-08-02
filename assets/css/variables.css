@@ -1,97 +1,240 @@
 /* ===========================================================
-   VARIABLES
-   يحتوي على:
-   ✓ Colors
-   ✓ Typography
-   ✓ Radius
-   ✓ Shadows
-   ✓ Spacing
-   ✓ Container
-   ✓ Transition
+   AMMAR SHARHAN PORTFOLIO
+   DESIGN TOKENS
+   Light / Dark Theme System
 =========================================================== */
-/* ==========================================
-   DESIGN SYSTEM v2.1
-========================================== */
+
+
+/* ===========================================================
+   ROOT — LIGHT MODE
+=========================================================== */
 
 :root{
 
-    /* ========= Colors ========= */
+    /* ==========================================
+       Brand Colors
+    ========================================== */
 
     --primary:#2b277c;
-    --primary-dark:#1f1c61;
+
+    --primary-dark:#211d63;
+
     --primary-light:#eef0ff;
 
     --secondary:#6c63ff;
-    --accent:#00bcd4;
+
+    --accent:#00b8d9;
+
+
+    /* ==========================================
+       Backgrounds
+    ========================================== */
 
     --background:#f8fafc;
+
     --surface:#ffffff;
 
+    --surface-alt:#f1f5f9;
+
+
+    /* ==========================================
+       Text
+    ========================================== */
+
     --text:#0f172a;
+
     --text-light:#64748b;
+
+    --text-muted:#94a3b8;
+
+    --text-inverse:#ffffff;
+
+
+    /* ==========================================
+       Borders
+    ========================================== */
 
     --border:#e2e8f0;
 
-    --success:#16a34a;
-    --warning:#f59e0b;
-    --danger:#dc2626;
+    --border-light:#eef2f7;
 
-    /* ========= Typography ========= */
 
-    --font-family:'Cairo',sans-serif;
+    /* ==========================================
+       Shadows
+    ========================================== */
 
-    --fs-xs:.75rem;
-    --fs-sm:.875rem;
-    --fs-md:1rem;
-    --fs-lg:1.125rem;
-    --fs-xl:1.5rem;
-    --fs-2xl:2rem;
-    --fs-3xl:2.75rem;
-    --fs-4xl:3.5rem;
+    --shadow-sm:
+        0 4px 12px rgba(15,23,42,.06);
 
-    --fw-regular:400;
-    --fw-medium:500;
-    --fw-semibold:600;
-    --fw-bold:700;
-    --fw-extrabold:800;
+    --shadow-md:
+        0 10px 30px rgba(15,23,42,.08);
 
-    /* ========= Radius ========= */
+    --shadow-lg:
+        0 20px 50px rgba(15,23,42,.12);
 
-    --radius-sm:10px;
-    --radius-md:16px;
-    --radius-lg:24px;
-    --radius-xl:32px;
-    --radius-round:999px;
 
-    /* ========= Spacing ========= */
+    /* ==========================================
+       Typography
+    ========================================== */
 
-    --space-1:4px;
-    --space-2:8px;
-    --space-3:12px;
-    --space-4:16px;
-    --space-5:24px;
-    --space-6:32px;
-    --space-7:48px;
-    --space-8:64px;
-    --space-9:96px;
-    --space-10:120px;
+    --font-family:
+    "GE Dinar One",
+    "GE Dinar One Regular",
+    Tahoma,
+    Arial,
+    sans-serif;
 
-    /* ========= Shadows ========= */
 
-    --shadow-xs:0 2px 6px rgba(15,23,42,.04);
+    /* ==========================================
+       Radius
+    ========================================== */
 
-    --shadow-sm:0 8px 20px rgba(15,23,42,.06);
+    --radius-sm:8px;
 
-    --shadow-md:0 12px 32px rgba(15,23,42,.08);
+    --radius-md:12px;
 
-    --shadow-lg:0 18px 40px rgba(15,23,42,.12);
+    --radius-lg:20px;
 
-    /* ========= Container ========= */
+    --radius-xl:28px;
 
-    --container:1200px;
+    --radius-full:999px;
 
-    /* ========= Transition ========= */
 
-    --transition:300ms ease;
+    /* ==========================================
+       Layout
+    ========================================== */
+
+    --container-width:1200px;
+
+    --header-height:80px;
+
+
+    /* ==========================================
+       Transitions
+    ========================================== */
+
+    --transition-fast:.2s ease;
+
+    --transition-normal:.3s ease;
+
+    --transition-slow:.45s ease;
+
+}
+
+
+/* ===========================================================
+   DARK MODE
+=========================================================== */
+
+body.dark-mode{
+
+    /* ==========================================
+       Backgrounds
+    ========================================== */
+
+    --background:#0b1120;
+
+    --surface:#111827;
+
+    --surface-alt:#1e293b;
+
+
+    /* ==========================================
+       Text
+    ========================================== */
+
+    --text:#f8fafc;
+
+    --text-light:#cbd5e1;
+
+    --text-muted:#94a3b8;
+
+    --text-inverse:#0f172a;
+
+
+    /* ==========================================
+       Borders
+    ========================================== */
+
+    --border:#334155;
+
+    --border-light:#1e293b;
+
+
+    /* ==========================================
+       Brand
+    ========================================== */
+
+    --primary:#7c83ff;
+
+    --primary-dark:#6366f1;
+
+    --primary-light:#27265a;
+
+    --secondary:#8b85ff;
+
+    --accent:#22d3ee;
+
+
+    /* ==========================================
+       Shadows
+    ========================================== */
+
+    --shadow-sm:
+        0 4px 14px rgba(0,0,0,.25);
+
+    --shadow-md:
+        0 10px 30px rgba(0,0,0,.30);
+
+    --shadow-lg:
+        0 20px 50px rgba(0,0,0,.40);
+
+}
+
+
+/* ===========================================================
+   THEME TRANSITION
+=========================================================== */
+
+html{
+
+    color-scheme:light;
+
+}
+
+body.dark-mode{
+
+    color-scheme:dark;
+
+}
+
+
+/* ===========================================================
+   GLOBAL THEME TRANSITION
+=========================================================== */
+
+body,
+.header,
+.card,
+.stat-card,
+.about-text,
+.about-tools,
+.service-card,
+.project-card,
+.skill-card,
+.timeline-content,
+.contact-card,
+.contact-wrapper,
+.footer{
+
+    transition:
+
+        background-color .35s ease,
+
+        color .35s ease,
+
+        border-color .35s ease,
+
+        box-shadow .35s ease;
 
 }
