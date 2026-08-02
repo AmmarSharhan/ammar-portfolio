@@ -689,3 +689,957 @@ iframe{
     }
 
 }
+
+/* ===========================================================
+   MOBILE HEADER
+   Logo & Icons Refinement
+=========================================================== */
+
+@media (max-width:768px){
+
+    /* ===============================
+       Header
+    =============================== */
+
+    .header{
+
+        min-height:70px;
+
+    }
+
+
+    /* ===============================
+       Header Container
+    =============================== */
+
+    .header .container{
+
+        min-height:70px;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:space-between;
+
+    }
+
+
+    /* ===============================
+       Logo
+    =============================== */
+
+    .logo{
+
+        display:flex;
+
+        align-items:center;
+
+        max-width:170px;
+
+    }
+
+    .logo img{
+
+        width:auto;
+
+        height:42px;
+
+        max-width:150px;
+
+        object-fit:contain;
+
+    }
+
+
+    /* ===============================
+       Header Actions
+    =============================== */
+
+    .header-actions{
+
+        display:flex;
+
+        align-items:center;
+
+        gap:8px;
+
+    }
+
+
+    /* ===============================
+       Theme Button
+    =============================== */
+
+    #themeToggle{
+
+        width:40px;
+
+        height:40px;
+
+        min-width:40px;
+
+        padding:0;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+        font-size:17px;
+
+    }
+
+
+    /* ===============================
+       Menu Button
+    =============================== */
+
+    .menu-toggle{
+
+        width:40px;
+
+        height:40px;
+
+        min-width:40px;
+
+        padding:0;
+
+        font-size:20px;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+    }
+
+}
+
+
+/* ===========================================================
+   SMALL MOBILE HEADER
+=========================================================== */
+
+@media (max-width:576px){
+
+    .header{
+
+        min-height:64px;
+
+    }
+
+    .header .container{
+
+        min-height:64px;
+
+    }
+
+    .logo{
+
+        max-width:145px;
+
+    }
+
+    .logo img{
+
+        height:36px;
+
+        max-width:130px;
+
+    }
+
+    .header-actions{
+
+        gap:6px;
+
+    }
+
+    #themeToggle,
+    .menu-toggle{
+
+        width:36px;
+
+        height:36px;
+
+        min-width:36px;
+
+    }
+
+    #themeToggle{
+
+        font-size:15px;
+
+    }
+
+    .menu-toggle{
+
+        font-size:18px;
+
+    }
+
+}
+
+/* ===========================================================
+   MOBILE HERO REFINEMENT
+=========================================================== */
+
+@media (max-width:768px){
+
+    /* ==========================================
+       Hero Layout
+    ========================================== */
+
+    .hero-container{
+
+        gap:32px;
+
+    }
+
+
+    /* ==========================================
+       Hero Image
+    ========================================== */
+
+    .hero-image-wrapper{
+
+        width:260px;
+
+        height:260px;
+
+        margin-inline:auto;
+
+    }
+
+
+    /* ==========================================
+       Hero Badge
+    ========================================== */
+
+    .hero-badge{
+
+        font-size:13px;
+
+        padding:8px 14px;
+
+    }
+
+
+    /* ==========================================
+       Main Heading
+    ========================================== */
+
+    .hero-content h1{
+
+        font-size:38px;
+
+        line-height:1.3;
+
+        margin-bottom:12px;
+
+    }
+
+
+    /* ==========================================
+       Subtitle
+    ========================================== */
+
+    .hero-content h2{
+
+        font-size:21px;
+
+        line-height:1.7;
+
+        margin-bottom:16px;
+
+    }
+
+
+    /* ==========================================
+       Description
+    ========================================== */
+
+    .hero-content p{
+
+        font-size:16px;
+
+        line-height:1.9;
+
+        max-width:520px;
+
+        margin-inline:auto;
+
+    }
+
+
+    /* ==========================================
+       Buttons
+    ========================================== */
+
+    .hero-buttons{
+
+        margin-top:24px;
+
+        gap:10px;
+
+    }
+
+
+    /* ==========================================
+       Stats
+    ========================================== */
+
+    .hero-stats{
+
+        width:100%;
+
+        gap:10px;
+
+        margin-top:28px;
+
+    }
+
+    .stat-card{
+
+        padding:16px 10px;
+
+    }
+
+}
+
+
+/* ===========================================================
+   VERY SMALL MOBILE
+=========================================================== */
+
+@media (max-width:576px){
+
+    .hero{
+
+        padding:80px 0 50px;
+
+    }
+
+    .hero-container{
+
+        gap:26px;
+
+    }
+
+
+    .hero-image-wrapper{
+
+        width:220px;
+
+        height:220px;
+
+    }
+
+
+    .hero-badge{
+
+        font-size:12px;
+
+        padding:7px 12px;
+
+    }
+
+
+    .hero-content h1{
+
+        font-size:34px;
+
+    }
+
+
+    .hero-content h2{
+
+        font-size:19px;
+
+        line-height:1.7;
+
+    }
+
+
+    .hero-content p{
+
+        font-size:15px;
+
+        line-height:1.9;
+
+    }
+
+
+    .hero-stats{
+
+        gap:8px;
+
+    }
+
+
+    .stat-card{
+
+        padding:14px 8px;
+
+    }
+
+}
+
+/* ===========================================================
+   MOBILE CARDS — COMPLETE REFINEMENT
+=========================================================== */
+
+
+/* ===========================================================
+   TABLET
+=========================================================== */
+
+@media (max-width:768px){
+
+    /* ==========================================
+       General Cards
+    ========================================== */
+
+    .service-card,
+    .skill-card,
+    .project-card,
+    .contact-card,
+    .stat-card{
+
+        width:100%;
+
+        max-width:100%;
+
+        margin-inline:auto;
+
+    }
+
+
+    /* ==========================================
+       Services
+    ========================================== */
+
+    .services-grid{
+
+        grid-template-columns:1fr;
+
+        gap:22px;
+
+    }
+
+    .service-card{
+
+        padding:28px 22px;
+
+    }
+
+
+    /* ==========================================
+       Skills
+    ========================================== */
+
+    .skills-grid{
+
+        grid-template-columns:1fr;
+
+        gap:22px;
+
+    }
+
+    .skill-card{
+
+        padding:26px 22px;
+
+    }
+
+
+    /* ==========================================
+       Projects
+    ========================================== */
+
+    .projects-grid{
+
+        grid-template-columns:1fr;
+
+        gap:24px;
+
+    }
+
+    .project-card{
+
+        overflow:hidden;
+
+    }
+
+    .project-card img{
+
+        width:100%;
+
+        height:auto;
+
+        display:block;
+
+        object-fit:cover;
+
+    }
+
+
+    /* ==========================================
+       Contact
+    ========================================== */
+
+    .contact-wrapper{
+
+        grid-template-columns:1fr;
+
+        gap:22px;
+
+    }
+
+    .contact-card{
+
+        padding:24px 20px;
+
+    }
+
+
+    /* ==========================================
+       Card Typography
+    ========================================== */
+
+    .service-card h3,
+    .skill-card h3,
+    .project-card h3,
+    .contact-card h3{
+
+        line-height:1.5;
+
+    }
+
+    .service-card p,
+    .skill-card p,
+    .project-card p,
+    .contact-card p{
+
+        line-height:1.8;
+
+    }
+
+
+    /* ==========================================
+       Remove Desktop Hover Effects
+    ========================================== */
+
+    .service-card:hover,
+    .skill-card:hover,
+    .project-card:hover,
+    .contact-card:hover{
+
+        transform:none;
+
+    }
+
+}
+
+
+/* ===========================================================
+   SMALL MOBILE
+=========================================================== */
+
+@media (max-width:576px){
+
+    /* ==========================================
+       Sections
+    ========================================== */
+
+    .about,
+    .skills,
+    .services,
+    .projects,
+    .experience,
+    .contact{
+
+        padding:65px 0;
+
+    }
+
+
+    /* ==========================================
+       Section Header
+    ========================================== */
+
+    .section-header{
+
+        margin-bottom:32px;
+
+    }
+
+    .section-header h2{
+
+        font-size:30px;
+
+        line-height:1.4;
+
+    }
+
+    .section-header p{
+
+        font-size:15px;
+
+        line-height:1.8;
+
+    }
+
+
+    /* ==========================================
+       Services
+    ========================================== */
+
+    .services-grid{
+
+        gap:16px;
+
+    }
+
+    .service-card{
+
+        padding:22px 18px;
+
+        border-radius:18px;
+
+    }
+
+
+    /* ==========================================
+       Skills
+    ========================================== */
+
+    .skills-grid{
+
+        gap:16px;
+
+    }
+
+    .skill-card{
+
+        padding:22px 18px;
+
+        border-radius:18px;
+
+    }
+
+
+    /* ==========================================
+       Projects
+    ========================================== */
+
+    .projects-grid{
+
+        gap:18px;
+
+    }
+
+    .project-card{
+
+        border-radius:18px;
+
+    }
+
+
+    /* ==========================================
+       Contact
+    ========================================== */
+
+    .contact-wrapper{
+
+        gap:16px;
+
+    }
+
+    .contact-card{
+
+        padding:20px 16px;
+
+        border-radius:18px;
+
+    }
+
+
+    /* ==========================================
+       Card Text
+    ========================================== */
+
+    .service-card h3,
+    .skill-card h3,
+    .project-card h3,
+    .contact-card h3{
+
+        font-size:19px;
+
+    }
+
+    .service-card p,
+    .skill-card p,
+    .project-card p,
+    .contact-card p{
+
+        font-size:15px;
+
+        line-height:1.85;
+
+    }
+
+
+    /* ==========================================
+       Card Icons
+    ========================================== */
+
+    .service-card i,
+    .service-card svg,
+    .skill-card i,
+    .skill-card svg,
+    .contact-card i,
+    .contact-card svg{
+
+        font-size:22px;
+
+        width:auto;
+
+        height:auto;
+
+    }
+
+
+    /* ==========================================
+       Project Image
+    ========================================== */
+
+    .project-card img{
+
+        max-height:220px;
+
+        object-fit:cover;
+
+    }
+
+}
+
+/* ===========================================================
+   MOBILE — ABOUT / EXPERIENCE / CONTACT / FOOTER
+=========================================================== */
+
+@media (max-width:768px){
+
+    /* ==========================================
+       About
+    ========================================== */
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+
+        gap:24px;
+
+    }
+
+    .about-text,
+    .about-tools{
+
+        width:100%;
+
+        padding:24px 20px;
+
+    }
+
+
+    /* ==========================================
+       Experience
+    ========================================== */
+
+    .timeline{
+
+        width:100%;
+
+    }
+
+    .timeline-content{
+
+        width:100%;
+
+        padding:24px 20px;
+
+    }
+
+
+    /* ==========================================
+       Contact
+    ========================================== */
+
+    .contact-wrapper{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+
+    }
+
+    .contact-card{
+
+        width:100%;
+
+    }
+
+
+    /* ==========================================
+       Footer
+    ========================================== */
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+        gap:30px;
+
+        text-align:center;
+
+    }
+
+    .footer-brand,
+    .footer-links,
+    .footer-contact{
+
+        width:100%;
+
+    }
+
+    .footer-links ul{
+
+        align-items:center;
+
+    }
+
+    .footer-contact{
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        text-align:center;
+
+        gap:12px;
+
+    }
+
+}
+
+
+/* ===========================================================
+   SMALL MOBILE
+=========================================================== */
+
+@media (max-width:576px){
+
+    /* ==========================================
+       About
+    ========================================== */
+
+    .about-text,
+    .about-tools{
+
+        padding:20px 16px;
+
+        border-radius:18px;
+
+    }
+
+
+    /* ==========================================
+       Experience
+    ========================================== */
+
+    .timeline-content{
+
+        padding:20px 16px;
+
+        border-radius:18px;
+
+    }
+
+
+    /* ==========================================
+       Contact
+    ========================================== */
+
+    .contact-card{
+
+        padding:20px 16px;
+
+        border-radius:18px;
+
+    }
+
+
+    /* ==========================================
+       Footer
+    ========================================== */
+
+    .footer{
+
+        padding:50px 0 20px;
+
+    }
+
+    .footer-grid{
+
+        gap:24px;
+
+    }
+
+    .footer-bottom{
+
+        padding-top:18px;
+
+    }
+
+}
+
+/* ===========================================================
+   MOBILE CV BUTTON REFINEMENT
+=========================================================== */
+
+@media (max-width:576px){
+
+    .header .download-cv-btn{
+
+        height:36px;
+
+        padding:0 14px;
+
+        font-size:14px;
+
+        gap:6px;
+
+        border-radius:10px;
+
+    }
+
+    .header .download-cv-btn i,
+    .header .download-cv-btn svg{
+
+        font-size:14px;
+
+    }
+
+}

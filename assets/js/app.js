@@ -3,6 +3,7 @@
    app.js
 =========================================================== */
 
+
 /* ==========================================
    Global Elements
 ========================================== */
@@ -14,79 +15,109 @@ const navLinks = document.querySelectorAll(".nav a");
 const sections = document.querySelectorAll("section[id]");
 const reveals = document.querySelectorAll(".reveal");
 
+
 /* ==========================================
    Header Scroll
 ========================================== */
 
-function initHeaderScroll() {
+function initHeaderScroll(){
 
-    if (!header) return;
+    if(!header) return;
 
-    window.addEventListener("scroll", () => {
+    const updateHeader = () => {
 
-        header.classList.toggle("scrolled", window.scrollY > 20);
+        header.classList.toggle(
+            "scrolled",
+            window.scrollY > 20
+        );
 
-    });
+    };
+
+    updateHeader();
+
+    window.addEventListener(
+        "scroll",
+        updateHeader,
+        { passive:true }
+    );
 
 }
+
 
 /* ==========================================
    Mobile Navigation
 ========================================== */
 
-function initMobileMenu() {
+function initMobileMenu(){
 
-    const menuToggle = document.getElementById("menuToggle");
-    const nav = document.querySelector(".nav");
-    const navLinks = document.querySelectorAll(".nav a");
+    if(!menuToggle || !nav) return;
 
-    if (!menuToggle || !nav) return;
+    const closeMenu = () => {
 
-    menuToggle.addEventListener("click", (event) => {
+        nav.classList.remove("nav-open");
+
+        document.body.classList.remove("menu-open");
+
+        menuToggle.classList.remove("active");
+
+        menuToggle.textContent = "☰";
+
+    };
+
+
+    menuToggle.addEventListener("click",(event)=>{
 
         event.stopPropagation();
 
-        const isOpen = nav.classList.toggle("nav-open");
+        const isOpen =
+            nav.classList.toggle("nav-open");
 
-        document.body.classList.toggle("menu-open", isOpen);
+        document.body.classList.toggle(
+            "menu-open",
+            isOpen
+        );
 
-        menuToggle.classList.toggle("active");
+        menuToggle.classList.toggle(
+            "active",
+            isOpen
+        );
 
-        menuToggle.textContent = isOpen ? "✕" : "☰";
+        menuToggle.textContent =
+            isOpen ? "✕" : "☰";
 
     });
+
 
     navLinks.forEach(link => {
 
-        link.addEventListener("click", () => {
-
-            nav.classList.remove("nav-open");
-
-            document.body.classList.remove("menu-open");
-
-            menuToggle.classList.remove("active");
-
-            menuToggle.textContent = "☰";
-
-        });
+        link.addEventListener("click",closeMenu);
 
     });
 
-    document.addEventListener("click", (event) => {
+
+    document.addEventListener("click",(event)=>{
 
         const clickedInsideMenu =
             nav.contains(event.target) ||
             menuToggle.contains(event.target);
 
-        if (!clickedInsideMenu && nav.classList.contains("nav-open")) {
+        if(
+            !clickedInsideMenu &&
+            nav.classList.contains("nav-open")
+        ){
 
-            nav.classList.remove("nav-open");
+            closeMenu();
 
-            document.body.classList.remove("menu-open");
+        }
 
-            menuToggle.classList.remove("active");
+    });
 
-            menuToggle.textContent = "☰";
+
+    window.addEventListener("resize",()=>{
+
+        if(window.innerWidth > 768){
+
+            closeMenu();
 
         }
 
@@ -94,21 +125,26 @@ function initMobileMenu() {
 
 }
 
+
 /* ==========================================
    Active Navigation
 ========================================== */
 
-function initActiveNavigation() {
+function initActiveNavigation(){
 
-    window.addEventListener("scroll", () => {
+    if(!sections.length || !navLinks.length) return;
+
+
+    const updateActiveNavigation = () => {
 
         let current = "";
 
         sections.forEach(section => {
 
-            const sectionTop = section.offsetTop - 120;
+            const sectionTop =
+                section.offsetTop - 140;
 
-            if (window.scrollY >= sectionTop) {
+            if(window.scrollY >= sectionTop){
 
                 current = section.id;
 
@@ -116,117 +152,133 @@ function initActiveNavigation() {
 
         });
 
+
         navLinks.forEach(link => {
 
             link.classList.toggle(
+
                 "active",
-                link.getAttribute("href") === "#" + current
+
+                link.getAttribute("href") ===
+                "#" + current
+
             );
 
         });
 
-    });
+    };
+
+
+    updateActiveNavigation();
+
+
+    window.addEventListener(
+        "scroll",
+        updateActiveNavigation,
+        { passive:true }
+    );
 
 }
+
 
 /* ==========================================
    Scroll Reveal
 ========================================== */
 
-function initReveal() {
+function initReveal(){
 
-    if (!reveals.length) return;
+    if(!reveals.length) return;
 
-    const observer = new IntersectionObserver((entries) => {
 
-        entries.forEach(entry => {
+    const observer =
+        new IntersectionObserver(
 
-            if (entry.isIntersecting) {
+            (entries) => {
 
-                entry.target.classList.add("show");
+                entries.forEach(entry => {
 
+                    if(entry.isIntersecting){
+
+                        entry.target.classList.add(
+                            "show"
+                        );
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold:0.15
             }
 
-        });
+        );
 
-    }, {
-        threshold: 0.15
+
+    reveals.forEach(item => {
+
+        observer.observe(item);
+
     });
-
-    reveals.forEach(item => observer.observe(item));
 
 }
 
-/* ==========================================
-   Initialize
-========================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
-
-    initHeaderScroll();
-
-    initMobileMenu();
-
-    initActiveNavigation();
-
-    initReveal();
-
-    initBackToTop();
-
-    initScrollProgress();
-
-    initLoader();
-
-    initCursorGlow();
-
-    initTheme();
-
-    initImages();
-
-    initCounters();
-
-});
 /* ==========================================
    Back To Top
 ========================================== */
 
-function initBackToTop() {
+function initBackToTop(){
 
-    const backToTop = document.getElementById("backToTop");
+    const backToTop =
+        document.getElementById("backToTop");
 
-    const footer = document.querySelector(".footer");
+    const footer =
+        document.querySelector(".footer");
 
-    if (!backToTop) return;
+    if(!backToTop) return;
 
-    window.addEventListener("scroll", () => {
 
-        const scrollPosition =
-            window.scrollY + window.innerHeight;
-
-        const documentHeight =
-            document.documentElement.scrollHeight;
+    const updateBackToTop = () => {
 
         const footerVisible =
             footer &&
-            footer.getBoundingClientRect().top <
+            footer.getBoundingClientRect().top <=
             window.innerHeight;
 
-        if (
+
+        if(
             window.scrollY > 500 &&
             !footerVisible
-        ) {
+        ){
 
             backToTop.classList.add("show");
 
-        } else {
+        }else{
 
             backToTop.classList.remove("show");
 
         }
 
-    });
+    };
 
-    backToTop.addEventListener("click", () => {
+
+    updateBackToTop();
+
+
+    window.addEventListener(
+        "scroll",
+        updateBackToTop,
+        { passive:true }
+    );
+
+
+    backToTop.addEventListener("click",()=>{
 
         window.scrollTo({
 
@@ -240,33 +292,62 @@ function initBackToTop() {
 
 }
 
+
 /* ==========================================
    Scroll Progress
 ========================================== */
 
 function initScrollProgress(){
 
-    const progress=document.querySelector(".scroll-progress");
+    const progress =
+        document.querySelector(".scroll-progress");
 
     if(!progress) return;
 
-    window.addEventListener("scroll",()=>{
 
-        const scrollTop=window.scrollY;
+    const updateProgress = () => {
 
-        const docHeight=
+        const scrollTop =
+            window.scrollY;
 
-            document.documentElement.scrollHeight-
-
+        const documentHeight =
+            document.documentElement.scrollHeight -
             window.innerHeight;
 
-        const width=(scrollTop/docHeight)*100;
 
-        progress.style.width=width+"%";
+        if(documentHeight <= 0){
 
-    });
+            progress.style.width = "0%";
+
+            return;
+
+        }
+
+
+        const percentage =
+            Math.min(
+                (scrollTop / documentHeight) * 100,
+                100
+            );
+
+
+        progress.style.width =
+            percentage + "%";
+
+    };
+
+
+    updateProgress();
+
+
+    window.addEventListener(
+        "scroll",
+        updateProgress,
+        { passive:true }
+    );
 
 }
+
 
 /* ==========================================
    Loading Screen
@@ -274,25 +355,48 @@ function initScrollProgress(){
 
 function initLoader(){
 
-    const loader=document.querySelector(".loader");
+    const loader =
+        document.querySelector(".loader");
 
     if(!loader) return;
 
-    document.body.classList.remove("page-loaded");
 
-    window.addEventListener("load",()=>{
+    document.body.classList.remove(
+        "page-loaded"
+    );
+
+
+    const hideLoader = () => {
 
         setTimeout(()=>{
 
             loader.classList.add("hide");
 
-            document.body.classList.add("page-loaded");
+            document.body.classList.add(
+                "page-loaded"
+            );
 
         },500);
 
-    });
+    };
+
+
+    if(document.readyState === "complete"){
+
+        hideLoader();
+
+    }else{
+
+        window.addEventListener(
+            "load",
+            hideLoader,
+            { once:true }
+        );
+
+    }
 
 }
+
 
 /* ==========================================
    Cursor Glow
@@ -300,27 +404,50 @@ function initLoader(){
 
 function initCursorGlow(){
 
-    const glow=document.querySelector(".cursor-glow");
+    const glow =
+        document.querySelector(".cursor-glow");
 
     if(!glow) return;
 
-    document.addEventListener("mousemove",(e)=>{
 
-        glow.style.opacity=".9";
+    if(
+        window.matchMedia("(hover:none)").matches
+    ){
 
-        glow.style.left=e.clientX+"px";
+        glow.style.display = "none";
 
-        glow.style.top=e.clientY+"px";
+        return;
 
-    });
+    }
 
-    document.addEventListener("mouseleave",()=>{
 
-        glow.style.opacity="0";
+    document.addEventListener(
+        "mousemove",
+        (event) => {
 
-    });
+            glow.style.opacity = ".9";
+
+            glow.style.left =
+                event.clientX + "px";
+
+            glow.style.top =
+                event.clientY + "px";
+
+        }
+    );
+
+
+    document.addEventListener(
+        "mouseleave",
+        () => {
+
+            glow.style.opacity = "0";
+
+        }
+    );
 
 }
+
 
 /* ==========================================
    Theme Toggle
@@ -328,27 +455,47 @@ function initCursorGlow(){
 
 function initTheme(){
 
-    const btn=document.getElementById("themeToggle");
+    const btn =
+        document.getElementById("themeToggle");
 
     if(!btn) return;
 
-    const savedTheme=localStorage.getItem("theme");
 
-    if(savedTheme==="dark"){
+    const savedTheme =
+        localStorage.getItem("theme");
 
-        document.body.classList.add("dark-mode");
 
-        btn.textContent="☀️";
+    if(savedTheme === "dark"){
+
+        document.body.classList.add(
+            "dark-mode"
+        );
+
+        btn.textContent = "☀️";
+
+    }else{
+
+        btn.textContent = "🌙";
 
     }
 
+
     btn.addEventListener("click",()=>{
 
-        document.body.classList.toggle("dark-mode");
+        document.body.classList.toggle(
+            "dark-mode"
+        );
 
-        const dark=document.body.classList.contains("dark-mode");
 
-        btn.textContent=dark ? "☀️" : "🌙";
+        const dark =
+            document.body.classList.contains(
+                "dark-mode"
+            );
+
+
+        btn.textContent =
+            dark ? "☀️" : "🌙";
+
 
         localStorage.setItem(
 
@@ -362,15 +509,20 @@ function initTheme(){
 
 }
 
+
 /* ==========================================
    Image Lazy Fade
 ========================================== */
 
 function initImages(){
 
-    const images=document.querySelectorAll("img");
+    const images =
+        document.querySelectorAll("img");
 
-    images.forEach(img=>{
+    if(!images.length) return;
+
+
+    images.forEach(img => {
 
         if(img.complete){
 
@@ -378,17 +530,28 @@ function initImages(){
 
         }else{
 
-            img.addEventListener("load",()=>{
+            img.addEventListener(
 
-                img.classList.add("loaded");
+                "load",
 
-            });
+                () => {
+
+                    img.classList.add(
+                        "loaded"
+                    );
+
+                },
+
+                { once:true }
+
+            );
 
         }
 
     });
 
 }
+
 
 /* ==========================================
    Animated Counters
@@ -397,64 +560,155 @@ function initImages(){
 function initCounters(){
 
     const counters =
-        document.querySelectorAll(".stat-number");
+        document.querySelectorAll(
+            ".stat-number"
+        );
 
     if(!counters.length) return;
 
-    const observer = new IntersectionObserver(
-        (entries, observer) => {
 
-            entries.forEach(entry => {
+    const observer =
+        new IntersectionObserver(
 
-                if(!entry.isIntersecting) return;
+            (entries, counterObserver) => {
 
-                const counter = entry.target;
+                entries.forEach(entry => {
 
-                const target =
-                    Number(counter.dataset.target);
+                    if(!entry.isIntersecting) return;
 
-                if(!Number.isFinite(target)) return;
 
-                const duration = 2800;
+                    const counter =
+                        entry.target;
 
-                const startTime = performance.now();
 
-                function updateCounter(currentTime){
-
-                    const progress =
-                        Math.min(
-                            (currentTime - startTime) / duration,
-                            1
+                    const target =
+                        Number(
+                            counter.dataset.target
                         );
 
-                    const eased =
-                        1 - Math.pow(1 - progress, 3);
 
-                    counter.textContent =
-                        Math.round(target * eased);
+                    if(!Number.isFinite(target)){
 
-                    if(progress < 1){
+                        counterObserver.unobserve(
+                            counter
+                        );
 
-                        requestAnimationFrame(updateCounter);
+                        return;
 
                     }
 
-                }
 
-                requestAnimationFrame(updateCounter);
+                    const duration = 2800;
 
-                observer.unobserve(counter);
+                    const startTime =
+                        performance.now();
 
-            });
 
-        },
-        {
-            threshold:0.6
-        }
-    );
+                    function updateCounter(
+                        currentTime
+                    ){
 
-    counters.forEach(counter =>
-        observer.observe(counter)
-    );
+                        const progress =
+                            Math.min(
+
+                                (
+                                    currentTime -
+                                    startTime
+                                ) / duration,
+
+                                1
+
+                            );
+
+
+                        const eased =
+                            1 -
+                            Math.pow(
+                                1 - progress,
+                                3
+                            );
+
+
+                        counter.textContent =
+                            Math.round(
+                                target * eased
+                            );
+
+
+                        if(progress < 1){
+
+                            requestAnimationFrame(
+                                updateCounter
+                            );
+
+                        }else{
+
+                            counter.textContent =
+                                target;
+
+                        }
+
+                    }
+
+
+                    requestAnimationFrame(
+                        updateCounter
+                    );
+
+
+                    counterObserver.unobserve(
+                        counter
+                    );
+
+                });
+
+            },
+
+            {
+                threshold:0.6
+            }
+
+        );
+
+
+    counters.forEach(counter => {
+
+        observer.observe(counter);
+
+    });
 
 }
+
+
+/* ==========================================
+   Initialize
+========================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        initHeaderScroll();
+
+        initMobileMenu();
+
+        initActiveNavigation();
+
+        initReveal();
+
+        initBackToTop();
+
+        initScrollProgress();
+
+        initLoader();
+
+        initCursorGlow();
+
+        initTheme();
+
+        initImages();
+
+        initCounters();
+
+    }
+);
