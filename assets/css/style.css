@@ -43,3 +43,85 @@ a{
 button{
     font-family:inherit;
 }
+
+::selection{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+/* ==========================================
+   Body Lock
+========================================== */
+
+body.menu-open{
+
+    overflow:hidden;
+
+}
+
+/* ===========================================================
+   PERFORMANCE & RENDERING
+=========================================================== */
+
+/* تحسين عرض النصوص */
+
+body{
+
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+
+}
+
+/* منع الاهتزاز أثناء التحويلات */
+
+img,
+button,
+a,
+.card,
+.project-card,
+.service-card,
+.skill-card{
+
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+
+}
+
+/* تحسين الصور */
+
+img{
+
+    max-width:100%;
+    display:block;
+
+}
+
+/* ===========================================================
+   DARK MODE TRANSITIONS
+=========================================================== */
+
+body,
+.header,
+.footer,
+.service-card,
+.project-card,
+.skill-card,
+.timeline-content,
+.contact-card,
+.about-text,
+.about-tools{
+
+    transition:
+
+        background .35s ease,
+
+        color .35s ease,
+
+        border-color .35s ease,
+
+        box-shadow .35s ease;
+
+}

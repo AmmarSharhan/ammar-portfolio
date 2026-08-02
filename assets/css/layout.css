@@ -474,3 +474,463 @@ a{
         color .25s ease;
 
 }
+section{
+
+    scroll-margin-top:100px;
+
+}
+
+/* ===========================================================
+   PREMIUM LAYOUT PACK 1
+   Hero • Background • Shapes • Section Decoration
+=========================================================== */
+
+/* ==========================================
+   Global Sections
+========================================== */
+
+section{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* ==========================================
+   Hero Background
+========================================== */
+
+.hero{
+
+    position:relative;
+
+    isolation:isolate;
+
+    background:
+
+        radial-gradient(circle at top right,
+        rgba(108,99,255,.10),
+        transparent 32%),
+
+        radial-gradient(circle at bottom left,
+        rgba(0,188,212,.08),
+        transparent 28%),
+
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f7f9fc 100%
+        );
+
+}
+
+/* ==========================================
+   Floating Blur 1
+========================================== */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:520px;
+
+    height:520px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(circle,
+        rgba(108,99,255,.16),
+        transparent 70%);
+
+    top:-220px;
+
+    right:-180px;
+
+    z-index:-1;
+
+    animation:
+
+        heroBlob1 16s ease-in-out infinite;
+
+}
+
+/* ==========================================
+   Floating Blur 2
+========================================== */
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(circle,
+        rgba(0,188,212,.10),
+        transparent 70%);
+
+    bottom:-180px;
+
+    left:-120px;
+
+    z-index:-1;
+
+    animation:
+
+        heroBlob2 18s ease-in-out infinite;
+
+}
+
+/* ==========================================
+   Hero Animation
+========================================== */
+
+@keyframes heroBlob1{
+
+    0%{
+
+        transform:
+            translateY(0)
+            translateX(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(30px)
+            translateX(-25px);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0)
+            translateX(0);
+
+    }
+
+}
+
+@keyframes heroBlob2{
+
+    0%{
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-30px);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   Section Decoration
+========================================== */
+
+.about::before,
+.skills::before,
+.services::before,
+.projects::before,
+.experience::before,
+.contact::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:70px;
+
+    left:60px;
+
+    width:110px;
+
+    height:110px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(circle,
+        rgba(108,99,255,.08),
+        transparent 72%);
+
+    pointer-events:none;
+
+}
+
+/* ==========================================
+   Container
+========================================== */
+
+.container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* ==========================================
+   Premium Hero Image
+========================================== */
+
+.hero-image-wrapper{
+
+    position:relative;
+
+}
+
+.hero-image-wrapper::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-18px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(108,99,255,.14);
+
+    animation:
+
+        rotateBorder 14s linear infinite;
+
+}
+
+@keyframes rotateBorder{
+
+    from{
+
+        transform:rotate(0);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ==========================================
+   Section Header
+========================================== */
+
+.section-header{
+
+    position:relative;
+
+}
+
+.section-header::after{
+
+    content:"";
+
+    display:block;
+
+    width:90px;
+
+    height:4px;
+
+    margin:24px auto 0;
+
+    border-radius:999px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--accent)
+        );
+
+}
+
+/* ==========================================
+   Premium Footer
+========================================== */
+
+.footer{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.footer::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(circle at top right,
+        rgba(255,255,255,.05),
+        transparent 38%);
+
+    pointer-events:none;
+
+}
+
+/* ===========================================================
+   THEME SYSTEM
+   Layout Color Mapping
+=========================================================== */
+
+
+/* ==========================================
+   Hero
+========================================== */
+
+.hero{
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--surface) 0%,
+            var(--background) 100%
+        );
+
+}
+
+
+/* ==========================================
+   About
+========================================== */
+
+.about{
+
+    background:var(--surface);
+
+}
+
+
+/* ==========================================
+   Services
+========================================== */
+
+.services{
+
+    background:var(--background);
+
+}
+
+
+/* ==========================================
+   Skills
+========================================== */
+
+.skills{
+
+    background:var(--background);
+
+}
+
+
+/* ==========================================
+   Projects
+========================================== */
+
+.projects{
+
+    background:var(--surface);
+
+}
+
+
+/* ==========================================
+   Experience
+========================================== */
+
+.experience{
+
+    background:var(--background);
+
+}
+
+
+/* ==========================================
+   Contact
+========================================== */
+
+.contact{
+
+    background:var(--surface);
+
+}
+
+
+/* ==========================================
+   Footer
+========================================== */
+
+.footer{
+
+    background:var(--surface);
+
+}
+
+
+/* ==========================================
+   Dark Mode Layout Enhancement
+========================================== */
+
+body.dark-mode .hero{
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--surface) 0%,
+            var(--background) 100%
+        );
+
+}
+
+body.dark-mode .about,
+body.dark-mode .projects,
+body.dark-mode .contact{
+
+    background:var(--surface);
+
+}
+
+body.dark-mode .services,
+body.dark-mode .skills,
+body.dark-mode .experience{
+
+    background:var(--background);
+
+}
