@@ -710,5 +710,46 @@ document.addEventListener(
 
         initCounters();
 
+        initProjectAnchorNavigation();
+
     }
 );
+
+/* ==========================================
+   Project Anchor Navigation
+========================================== */
+
+function initProjectAnchorNavigation() {
+
+    const hash = window.location.hash;
+
+    if (!hash) return;
+
+    const target = document.querySelector(hash);
+
+    if (!target) return;
+
+    setTimeout(() => {
+
+        const header = document.querySelector(".header");
+
+        const headerHeight =
+            header ? header.offsetHeight : 0;
+
+        const targetPosition =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            headerHeight -
+            20;
+
+        window.scrollTo({
+
+            top: targetPosition,
+
+            behavior: "smooth"
+
+        });
+
+    }, 500);
+
+}

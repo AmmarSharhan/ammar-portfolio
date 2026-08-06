@@ -2549,7 +2549,7 @@ body.dark-mode .nav{
 
 body.dark-mode .footer{
 
-    background:#080d18;
+    background:#111827;
 
     color:#f8fafc;
 
@@ -2568,5 +2568,87 @@ body.dark-mode .footer-links a,
 body.dark-mode .footer-contact p{
 
     color:#cbd5e1;
+
+}
+
+/* ==========================================
+   Footer Background Fix
+========================================== */
+
+.footer{
+
+    background:#111827;
+
+    color:#f8fafc;
+
+}
+
+.footer-brand h3,
+.footer-links h4,
+.footer-contact h4{
+
+    color:#f8fafc;
+
+}
+
+.footer-brand p,
+.footer-links a,
+.footer-contact p{
+
+    color:#cbd5e1;
+
+}
+
+/* ==========================================
+   Header & Footer Unified Identity — Final
+========================================== */
+
+.header,
+.header.scrolled{
+
+    background:#111827 !important;
+
+}
+
+.header .nav a,
+.header.scrolled .nav a{
+
+    color:#f8fafc !important;
+
+}
+
+.header .nav a:hover,
+.header .nav a.active,
+.header.scrolled .nav a:hover,
+.header.scrolled .nav a.active{
+
+    color:#ffffff !important;
+
+}
+
+/* ==========================================
+   Header Navigation — Dark Unified Fix
+========================================== */
+
+.header .nav,
+.header.scrolled .nav{
+
+    background:#111827 !important;
+
+}
+
+.header .nav a,
+.header.scrolled .nav a{
+
+    color:#f8fafc !important;
+
+}
+
+.header .nav a:hover,
+.header .nav a.active,
+.header.scrolled .nav a:hover,
+.header.scrolled .nav a.active{
+
+    color:#ffffff !important;
 
 }
