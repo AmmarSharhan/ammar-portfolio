@@ -125,3 +125,594 @@ body,
         box-shadow .35s ease;
 
 }
+
+
+/* =========================================================
+   ABOUT PAGE — PREMIUM LAYOUT
+   صفحة About المستقلة فقط
+========================================================= */
+
+/* =========================================================
+   About Page Hero
+========================================================= */
+
+.about-page-hero {
+    position: relative;
+    padding: 110px 20px 80px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.about-page-hero .container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-page-hero h1 {
+    max-width: 850px;
+    margin: 20px auto 18px;
+    font-size: clamp(2.2rem, 4vw, 4rem);
+    line-height: 1.25;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.about-page-hero p {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 2;
+    color: var(--text-muted, #68738a);
+}
+
+.about-page-hero .section-line {
+    width: 70px;
+    height: 4px;
+    margin: 28px auto 0;
+    border-radius: 20px;
+    background: linear-gradient(
+        90deg,
+        var(--primary, #2b277c),
+        #13b7e8
+    );
+}
+
+
+/* =========================================================
+   About Detail Sections — General
+========================================================= */
+
+.about-detail-section {
+    padding: 80px 20px;
+}
+
+.about-detail-section .container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   Who I Am
+========================================================= */
+
+.about-detail-grid {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.4fr);
+    gap: 60px;
+    align-items: start;
+}
+
+.about-detail-intro {
+    position: sticky;
+    top: 120px;
+}
+
+.about-detail-intro .project-label {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    background: rgba(43, 39, 124, 0.08);
+    color: var(--primary, #2b277c);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.about-detail-intro h2 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.about-detail-intro h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--text-muted, #68738a);
+}
+
+.about-detail-text {
+    padding: 30px;
+    border: 1px solid rgba(43, 39, 124, 0.10);
+    border-radius: 22px;
+    background: var(--surface, #fff);
+    box-shadow: 0 15px 45px rgba(20, 25, 50, 0.06);
+}
+
+.about-detail-text p {
+    margin: 0;
+    font-size: 1.02rem;
+    line-height: 2.15;
+    color: var(--text-muted, #68738a);
+}
+
+.about-detail-text p + p {
+    margin-top: 22px;
+}
+
+.about-detail-text strong {
+    color: var(--primary, #2b277c);
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   About Tools
+========================================================= */
+
+.about-tools {
+    padding: 35px;
+    border: 1px solid rgba(43, 39, 124, 0.10);
+    border-radius: 24px;
+    background: var(--surface, #fff);
+    box-shadow: 0 15px 45px rgba(20, 25, 50, 0.06);
+}
+
+.about-tools > h3 {
+    margin: 0 0 12px;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.about-tools > p {
+    margin: 0 0 28px;
+    line-height: 1.9;
+    color: var(--text-muted, #68738a);
+}
+
+
+/* =========================================================
+   Tool Categories
+========================================================= */
+
+.about-tools .tool-category {
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(43, 39, 124, 0.08);
+}
+
+.about-tools .tool-category:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+}
+
+.about-tools .tool-category h4 {
+    margin: 0 0 14px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--text);
+}
+
+
+/* =========================================================
+   Tools Grid
+========================================================= */
+
+.about-tools .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    align-items: stretch;
+}
+
+.about-tools .tools-grid span {
+    min-height: 48px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    border: 1px solid rgba(43, 39, 124, 0.08);
+    border-radius: 12px;
+
+    background: #f7f8fc;
+
+    color: var(--text);
+    font-size: 0.82rem;
+    font-weight: 700;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+}
+
+.about-tools .tools-grid span:hover {
+    transform: translateY(-3px);
+    border-color: rgba(43, 39, 124, 0.22);
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(20, 25, 50, 0.07);
+}
+
+
+/* =========================================================
+   About Actions
+========================================================= */
+
+.about-actions {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.about-actions .btn {
+    min-height: 48px;
+    padding: 0 22px;
+}
+
+
+/* =========================================================
+   Section Spacing
+========================================================= */
+
+.about-detail-section + .about-detail-section {
+    padding-top: 20px;
+}
+
+
+/* =========================================================
+   Mobile
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .about-page-hero {
+        padding: 85px 20px 60px;
+    }
+
+    .about-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-detail-intro {
+        position: static;
+    }
+
+    .about-detail-text {
+        padding: 25px;
+    }
+
+    .about-tools {
+        padding: 25px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .about-page-hero h1 {
+        font-size: 2rem;
+    }
+
+    .about-page-hero p {
+        font-size: 0.95rem;
+    }
+
+    .about-detail-section {
+        padding: 60px 16px;
+    }
+
+    .about-detail-intro h2 {
+        font-size: 2rem;
+    }
+
+    .about-detail-text {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .about-detail-text p {
+        font-size: 0.95rem;
+        line-height: 2;
+    }
+
+    .about-tools {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .about-tools .tools-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-tools .tools-grid span {
+        min-height: 44px;
+        font-size: 0.78rem;
+    }
+
+    .about-actions {
+        flex-direction: column;
+    }
+
+    .about-actions .btn {
+        width: 100%;
+    }
+
+}
+/* =========================================================
+   ABOUT PAGE — Disable Cursor Glow
+========================================================= */
+
+body:has(.about-page-hero) .cursor-glow {
+    display: none !important;
+}
+
+/* ===========================================================
+   About Section - Premium Layout
+=========================================================== */
+
+.about {
+    position: relative;
+    padding: 110px 0;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+
+/* -----------------------------------------------------------
+   Section Header
+----------------------------------------------------------- */
+
+.about-header {
+    max-width: 850px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.about-header .section-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.about-header h2 {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.55;
+}
+
+.about-header p {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 2;
+}
+
+
+/* -----------------------------------------------------------
+   Main Content
+----------------------------------------------------------- */
+
+.about-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-text {
+    width: 100%;
+}
+
+
+/* -----------------------------------------------------------
+   About Title
+----------------------------------------------------------- */
+
+.about-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 35px;
+}
+
+.about-title-line {
+    display: block;
+    width: 5px;
+    height: 34px;
+    border-radius: 10px;
+    background: var(--primary);
+}
+
+.about-title h3 {
+    margin: 0;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--text-dark, #1f2937);
+}
+
+
+/* -----------------------------------------------------------
+   Description
+----------------------------------------------------------- */
+
+.about-description {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.about-description p {
+    margin: 0 0 22px;
+    font-size: 1.05rem;
+    line-height: 2.05;
+    color: #5f6470;
+    text-align: right;
+}
+
+.about-description p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* -----------------------------------------------------------
+   Skills List
+----------------------------------------------------------- */
+
+.about-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 20px;
+    margin-top: 42px;
+    padding: 28px;
+    border: 1px solid rgba(43, 39, 124, 0.08);
+    border-radius: 18px;
+    background: #fafaff;
+}
+
+.about-list-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 52px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #454b57;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    border: 1px solid transparent;
+}
+
+.about-list-item:hover {
+    transform: translateY(-3px);
+    border-color: rgba(43, 39, 124, 0.12);
+    box-shadow: 0 10px 30px rgba(20, 20, 50, 0.06);
+}
+
+.about-check {
+    flex: 0 0 27px;
+    width: 27px;
+    height: 27px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(43, 39, 124, 0.08);
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+
+/* -----------------------------------------------------------
+   CTA
+----------------------------------------------------------- */
+
+.about-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 42px;
+}
+
+.about-actions .btn {
+    min-width: 190px;
+    text-align: center;
+}
+
+
+/* -----------------------------------------------------------
+   Responsive
+----------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    .about {
+        padding: 80px 0;
+    }
+
+    .about-header {
+        margin-bottom: 45px;
+    }
+
+    .about-header h2 {
+        font-size: 1.65rem;
+        line-height: 1.6;
+    }
+
+    .about-header p {
+        font-size: 0.95rem;
+        line-height: 1.9;
+    }
+
+    .about-title {
+        justify-content: flex-start;
+    }
+
+    .about-description p {
+        font-size: 0.98rem;
+        line-height: 1.95;
+    }
+
+    .about-list {
+        grid-template-columns: 1fr;
+        padding: 18px;
+        gap: 10px;
+    }
+
+    .about-list-item {
+        font-size: 0.9rem;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .about {
+        padding: 65px 0;
+    }
+
+    .about-header h2 {
+        font-size: 1.45rem;
+    }
+
+    .about-title h3 {
+        font-size: 1.45rem;
+    }
+
+    .about-description p {
+        font-size: 0.93rem;
+    }
+
+    .about-list {
+        padding: 12px;
+    }
+
+    .about-list-item {
+        padding: 10px;
+    }
+
+}
