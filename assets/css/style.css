@@ -716,3 +716,21 @@ body:has(.about-page-hero) .cursor-glow {
     }
 
 }
+
+/* إلغاء هالة الماوس والتوهج الخلفي */
+.cursor-glow,
+.mouse-glow,
+.glow,
+#cursor-glow,
+.blob {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* إلغاء توهج البطاقات عند تحريك الماوس */
+.service-card::before,
+.service-card::after {
+    display: none !important;
+    background: none !important;
+}

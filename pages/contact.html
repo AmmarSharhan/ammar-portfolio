@@ -3,23 +3,61 @@
 
 <head>
 
+    <!-- ===========================================================
+         Basic Meta
+    ============================================================ -->
+
     <meta charset="UTF-8">
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0">
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+    >
 
     <meta
         name="description"
-        content="تواصل مع عمار شرهان للتعاون في مشاريع التسويق الرقمي وصناعة المحتوى والذكاء الاصطناعي.">
+        content="تواصل مع عمار شرهان للتعاون في مشاريع التسويق الرقمي وصناعة المحتوى والذكاء الاصطناعي."
+    >
+
+    <meta
+        name="keywords"
+        content="عمار شرهان, تواصل, تسويق رقمي, صناعة محتوى, ذكاء اصطناعي, Digital Marketing, AI"
+    >
 
     <meta
         name="author"
-        content="Ammar Sharhan">
+        content="Ammar Sharhan"
+    >
 
-    <title>
-        تواصل معي | عمار شرهان
-    </title>
+    <meta
+        name="theme-color"
+        content="#2b277c"
+    >
+
+    <title>تواصل معي | عمار شرهان</title>
+
+
+    <!-- ===========================================================
+         Google Fonts
+    ============================================================ -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
 
     <!-- ===========================================================
@@ -28,114 +66,133 @@
 
     <link
         rel="stylesheet"
-        href="../assets/css/variables.css">
+        href="../assets/css/variables.css"
+    >
 
     <link
         rel="stylesheet"
-        href="../assets/css/reset.css">
+        href="../assets/css/design-system.css"
+    >
 
     <link
         rel="stylesheet"
-        href="../assets/css/typography.css">
+        href="../assets/css/reset.css"
+    >
 
     <link
         rel="stylesheet"
-        href="../assets/css/layout.css">
+        href="../assets/css/layout.css"
+    >
 
     <link
         rel="stylesheet"
-        href="../assets/css/components.css">
+        href="../assets/css/components.css"
+    >
 
     <link
         rel="stylesheet"
-        href="../assets/css/utilities.css">
+        href="../assets/css/utilities.css"
+    >
 
     <link
         rel="stylesheet"
-        href="../assets/css/animations.css">
+        href="../assets/css/animations.css"
+    >
 
     <link
         rel="stylesheet"
-        href="../assets/css/style.css">
+        href="../assets/css/style.css"
+    >
 
     <link
         rel="stylesheet"
-        href="../assets/css/responsive.css">
+        href="../assets/css/responsive.css"
+    >
+
+    <!-- ===========================================================
+         Contact Page CSS
+    ============================================================ -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/contact.css?v=2"
+    >
 
 </head>
 
 
 <body>
 
+    <!-- ===========================================================
+         Scroll Progress
+    ============================================================ -->
 
-<!-- ===========================================================
-     Scroll Progress
-=========================================================== -->
-
-<div class="scroll-progress"></div>
+    <div class="scroll-progress"></div>
 
 
-<!-- ===========================================================
-     Loading Screen
-=========================================================== -->
+    <!-- ===========================================================
+         Loading Screen
+    ============================================================ -->
 
-<div class="loader">
+    <div class="loader">
 
-    <div class="loader-content">
+        <div class="loader-content">
 
-        <div class="loader-logo">
+            <div class="loader-logo">
 
-            <img
-                src="../assets/images/logo/logo.png"
-                alt="عمار شرهان"
-                loading="lazy">
+                <img
+                    src="../assets/images/logo/logo.png"
+                    alt="عمار شرهان"
+                    loading="lazy"
+                >
 
-        </div>
+            </div>
 
-        <div class="loader-line">
-
-            <span></span>
+            <div class="loader-line">
+                <span></span>
+            </div>
 
         </div>
 
     </div>
 
-</div>
+
+    <!-- ===========================================================
+         Cursor Glow
+    ============================================================ -->
+
+    <div class="cursor-glow"></div>
 
 
-<!-- ===========================================================
-     Cursor Glow
-=========================================================== -->
+    <!-- ===========================================================
+         Header
+    ============================================================ -->
 
-<div class="cursor-glow"></div>
+    <header class="header">
 
-
-<!-- ===========================================================
-     Header
-=========================================================== -->
-
-<header class="header">
-
-    <div class="container header-container">
+        <div class="container header-container">
 
 
-        <!-- ================= Logo ================= -->
+            <!-- ================= Logo ================= -->
 
-        <a
-            href="../index.html"
-            class="logo">
+            <a
+                href="../index.html"
+                class="logo"
+                aria-label="العودة إلى الصفحة الرئيسية"
+            >
 
-            <img
-                src="../assets/images/logo/logo.png"
-                alt="عمار شرهان"
-                loading="lazy">
+                <img
+                    src="../assets/images/logo/logo.png"
+                    alt="شعار عمار شرهان"
+                    loading="lazy"
+                >
 
-        </a>
+            </a>
 
 
-        <!-- ================= Navigation ================= -->
+            <!-- ================= Navigation ================= -->
 
-        <nav class="nav">
+<nav class="nav">
 
             <ul>
 
@@ -176,12 +233,14 @@
                 </li>
 
                 <li>
-                    <a
-                        href="../index.html#contact"
-                        class="active">
+                    <a href="../index.html#blog">
+                        المدونة
+                    </a>
+                </li>
 
+                <li>
+                    <a href="../index.html#contact">
                         تواصل
-
                     </a>
                 </li>
 
@@ -189,438 +248,607 @@
 
         </nav>
 
+            <!-- ================= Header Actions ================= -->
 
-        <!-- ================= Header Actions ================= -->
+            <div class="header-actions">
 
-        <div class="header-actions">
-
-
-            <button
-                class="icon-btn"
-                aria-label="تغيير اللغة">
-
-                AR
-
-            </button>
+                <button
+                    type="button"
+                    class="icon-btn"
+                    aria-label="تغيير اللغة"
+                >
+                    AR
+                </button>
 
 
-            <button
-                class="icon-btn"
-                id="themeToggle"
-                aria-label="الوضع الليلي">
-
-                🌙
-
-            </button>
-
-
-            <a
-                href="../assets/documents/ammar-sharhan-cv.pdf"
-                class="btn btn-primary"
-                download>
-
-                تحميل السيرة
-
-            </a>
-
-
-            <button
-                id="menuToggle"
-                class="menu-toggle"
-                aria-label="القائمة">
-
-                ☰
-
-            </button>
-
-
-        </div>
-
-    </div>
-
-</header>
-
-
-<!-- ===========================================================
-     Main
-=========================================================== -->
-
-<main>
-
-
-<!-- ===========================================================
-     Contact Hero
-=========================================================== -->
-
-<section class="hero page-hero">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <span class="section-badge">
-
-                Contact
-
-            </span>
-
-            <h1>
-
-                لنبدأ مشروعك القادم
-
-            </h1>
-
-            <p>
-
-                إذا كانت لديك فكرة أو مشروع أو تبحث عن شخص يساعدك
-                في التسويق الرقمي وصناعة المحتوى، يسعدني أن أسمع منك.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ===========================================================
-     Contact Section
-=========================================================== -->
-
-<section class="contact reveal">
-
-    <div class="container">
-
-
-        <div class="contact-wrapper">
-
-
-            <!-- ================= Contact Information ================= -->
-
-            <div class="contact-card">
-
-                <h2>
-
-                    تواصل معي
-
-                </h2>
-
-                <p>
-
-                    يمكنك التواصل معي مباشرة عبر البريد الإلكتروني
-                    أو الهاتف، وسأكون سعيدًا بمناقشة فكرتك واحتياجاتك.
-
-                </p>
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="themeToggle"
+                    aria-label="الوضع الليلي"
+                >
+                    🌙
+                </button>
 
 
                 <a
-                    href="mailto:ammar506070@gmail.com"
-                    class="contact-item">
-
-                    <span>📧</span>
-
-                    <div>
-
-                        <h4>
-                            البريد الإلكتروني
-                        </h4>
-
-                        <p>
-                            ammar506070@gmail.com
-                        </p>
-
-                    </div>
-
+                    href="../assets/documents/ammar-sharhan-cv.pdf"
+                    class="btn btn-primary"
+                    download
+                >
+                    تحميل السيرة
                 </a>
 
 
-                <a
-                    href="tel:+967771202003"
-                    class="contact-item">
+                <button
+                    type="button"
+                    id="menuToggle"
+                    class="menu-toggle"
+                    aria-label="فتح القائمة"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
 
-                    <span>📱</span>
+            </div>
 
-                    <div>
+        </div>
 
-                        <h4>
-                            الهاتف
-                        </h4>
-
-                        <p>
-                            +967 771 202 003
-                        </p>
-
-                    </div>
-
-                </a>
+    </header>
 
 
-                <div class="contact-item">
+    <!-- ===========================================================
+         Main
+    ============================================================ -->
 
-                    <span>📍</span>
+    <main class="contact-page">
 
-                    <div>
 
-                        <h4>
-                            الموقع
-                        </h4>
+        <!-- ===========================================================
+             Contact Hero
+        ============================================================ -->
 
-                        <p>
-                            صنعاء، اليمن
-                        </p>
+        <section
+            class="contact-page-hero"
+            aria-labelledby="contact-page-title"
+        >
 
-                    </div>
+            <div class="container">
+
+                <div class="contact-hero-content">
+
+                    <span class="section-badge">
+                        تواصل
+                    </span>
+
+
+                    <h1 id="contact-page-title">
+
+                        لديك فكرة؟
+
+                        <span>
+                            دعنا نحولها إلى شيء يستحق أن يُرى.
+                        </span>
+
+                    </h1>
+
+
+                    <p>
+
+                        سواء كنت تبحث عن تطوير حضورك الرقمي،
+                        صناعة محتوى إبداعي، إدارة حملة تسويقية،
+                        أو توظيف الذكاء الاصطناعي في الإنتاج،
+                        يسعدني أن أسمع عن مشروعك.
+
+                    </p>
 
                 </div>
 
             </div>
 
-
-            <!-- ================= Contact CTA ================= -->
-
-            <div class="contact-card">
-
-                <span class="section-badge">
-
-                    Let's Work
-
-                </span>
+        </section>
 
 
-                <h2>
+        <!-- ===========================================================
+             Contact Main
+        ============================================================ -->
 
-                    لديك مشروع أو فكرة؟
+        <section
+            class="contact-page-main"
+            aria-label="معلومات التواصل وبدء المشروع"
+        >
 
-                </h2>
+            <div class="container">
 
+
+                <div class="contact-page-grid">
+
+
+                    <!-- =================================================
+                         Contact Information
+                    ================================================== -->
+
+                    <div class="contact-info-card">
+
+
+                        <!-- Card Header -->
+
+                        <div class="contact-card-header">
+
+                            <span class="contact-card-number">
+                                01
+                            </span>
+
+                            <div>
+
+                                <span class="contact-mini-label">
+                                    تواصل مباشر
+                                </span>
+
+                                <h2>
+                                    تواصل معي
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Intro -->
+
+                        <p class="contact-card-intro">
+
+                            يمكنك التواصل معي مباشرة عبر إحدى وسائل
+                            التواصل التالية، وسأكون سعيدًا بمناقشة
+                            فكرتك واحتياجات مشروعك.
+
+                        </p>
+
+
+                        <!-- ================= Email ================= -->
+
+                        <a
+                            href="mailto:ammar506070@gmail.com"
+                            class="contact-info-item"
+                            aria-label="إرسال بريد إلكتروني إلى عمار شرهان"
+                        >
+
+                            <span
+                                class="contact-info-icon"
+                                aria-hidden="true"
+                            >
+                                ✉
+                            </span>
+
+                            <span class="contact-info-content">
+
+                                <strong>
+                                    البريد الإلكتروني
+                                </strong>
+
+                                <small>
+                                    ammar506070@gmail.com
+                                </small>
+
+                            </span>
+
+                            <span
+                                class="contact-info-arrow"
+                                aria-hidden="true"
+                            >
+                                ←
+                            </span>
+
+                        </a>
+
+
+                        <!-- ================= Phone ================= -->
+
+                        <a
+                            href="tel:+967771202003"
+                            class="contact-info-item"
+                            aria-label="الاتصال بعمار شرهان"
+                        >
+
+                            <span
+                                class="contact-info-icon"
+                                aria-hidden="true"
+                            >
+                                ☎
+                            </span>
+
+                            <span class="contact-info-content">
+
+                                <strong>
+                                    الهاتف
+                                </strong>
+
+                                <small dir="ltr">
+                                    +967 771 202 003
+                                </small>
+
+                            </span>
+
+                            <span
+                                class="contact-info-arrow"
+                                aria-hidden="true"
+                            >
+                                ←
+                            </span>
+
+                        </a>
+
+
+                        <!-- ================= WhatsApp ================= -->
+
+                        <a
+                            href="https://wa.me/967771202003"
+                            class="contact-info-item"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="التواصل مع عمار شرهان عبر واتساب"
+                        >
+
+                            <span
+                                class="contact-info-icon"
+                                aria-hidden="true"
+                            >
+                                ◉
+                            </span>
+
+                            <span class="contact-info-content">
+
+                                <strong>
+                                    واتساب
+                                </strong>
+
+                                <small>
+                                    تواصل سريع ومباشر
+                                </small>
+
+                            </span>
+
+                            <span
+                                class="contact-info-arrow"
+                                aria-hidden="true"
+                            >
+                                ←
+                            </span>
+
+                        </a>
+
+
+                        <!-- ================= Location ================= -->
+
+                        <div class="contact-info-item contact-info-static">
+
+                            <span
+                                class="contact-info-icon"
+                                aria-hidden="true"
+                            >
+                                ●
+                            </span>
+
+                            <span class="contact-info-content">
+
+                                <strong>
+                                    الموقع
+                                </strong>
+
+                                <small>
+                                    صنعاء، اليمن
+                                </small>
+
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- =================================================
+                         Start Project
+                    ================================================== -->
+
+                    <div class="contact-start-card">
+
+
+                        <span class="contact-card-number">
+                            02
+                        </span>
+
+
+                        <span class="contact-mini-label">
+                            لنبدأ العمل
+                        </span>
+
+
+                        <h2>
+
+                            أخبرني عن
+
+                            <span>
+                                فكرتك.
+                            </span>
+
+                        </h2>
+
+
+                        <p>
+
+                            لا تحتاج إلى تجهيز Brief طويل أو وصف مثالي
+                            للمشروع. أخبرني ببساطة بما تريد تحقيقه،
+                            وسنبدأ من الفكرة ونحدد أفضل طريقة لتحويلها
+                            إلى حل تسويقي ومحتوى احترافي.
+
+                        </p>
+
+
+                        <!-- ================= Services ================= -->
+
+                        <div class="contact-service-tags">
+
+                            <span>
+                                التسويق الرقمي
+                            </span>
+
+                            <span>
+                                صناعة المحتوى
+                            </span>
+
+                            <span>
+                                الذكاء الاصطناعي
+                            </span>
+
+                            <span>
+                                التصميم الإبداعي
+                            </span>
+
+                        </div>
+
+
+                        <!-- ================= CTA ================= -->
+
+                        <a
+                            href="mailto:ammar506070@gmail.com"
+                            class="btn btn-primary contact-main-button"
+                            aria-label="بدء محادثة عبر البريد الإلكتروني"
+                        >
+
+                            ابدأ المحادثة
+
+                            <span aria-hidden="true">
+                                ←
+                            </span>
+
+                        </a>
+
+
+                        <p class="contact-response-note">
+
+                            متاح للعمل عن بُعد والتعاون مع الشركات
+                            والعلامات التجارية في السعودية وخارجها.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===========================================================
+             Final CTA
+        ============================================================ -->
+
+        <section
+            class="contact-final-cta"
+            aria-labelledby="contact-final-title"
+        >
+
+            <div class="container">
+
+                <div class="contact-final-content">
+
+                    <span class="section-badge">
+                        خطوة بسيطة
+                    </span>
+
+
+                    <h2 id="contact-final-title">
+                        جاهز لفكرة جديدة؟
+                    </h2>
+
+
+                    <p>
+                        أرسل لي فكرتك كما هي، وسنبدأ من هناك.
+                    </p>
+
+
+                    <a
+                        href="mailto:ammar506070@gmail.com"
+                        class="btn btn-primary"
+                        aria-label="التواصل مع عمار شرهان الآن"
+                    >
+
+                        تواصل معي الآن
+
+                        <span aria-hidden="true">
+                            ←
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ===========================================================
+         Footer
+    ============================================================ -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+
+                <!-- ================= Footer Brand ================= -->
+
+                <div class="footer-brand">
+
+                    <img
+                        src="../assets/images/logo/logo.png"
+                        alt="شعار عمار شرهان"
+                        loading="lazy"
+                    >
+
+                    <h3>
+                        عمار شرهان
+                    </h3>
+
+                    <p>
+
+                        متخصص تسويق رقمي وصناعة محتوى إبداعي
+                        بالذكاء الاصطناعي.
+
+                    </p>
+
+                </div>
+
+
+                <!-- ================= Footer Links ================= -->
+
+<div class="footer-links">
+
+            <h4>
+
+                استكشف
+
+            </h4>
+
+            <ul>
+
+                <li>
+                    <a href="../index.html#hero">
+                        الرئيسية
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../index.html#about">
+                        من أنا
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../index.html#skills">
+                        المهارات
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../index.html#services">
+                        الخدمات
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../index.html#projects">
+                        المشاريع
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../index.html#experience">
+                        الخبرات
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../index.html#blog">
+                        المدونة
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../index.html#contact">
+                        تواصل
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+                <!-- ================= Footer Contact ================= -->
+
+                <div class="footer-contact">
+
+                    <h4>
+                        معلومات التواصل
+                    </h4>
+
+                    <p>
+                        📧 ammar506070@gmail.com
+                    </p>
+
+                    <p>
+                        📱 +967 771 202 003
+                    </p>
+
+                    <p>
+                        📍 صنعاء، اليمن
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ================= Footer Bottom ================= -->
+
+            <div class="footer-bottom">
 
                 <p>
-
-                    أساعد في التسويق الرقمي، صناعة المحتوى الإبداعي،
-                    وصناعة المحتوى باستخدام الذكاء الاصطناعي.
-
+                    © 2026 Ammar Sharhan — جميع الحقوق محفوظة.
                 </p>
-
-
-                <p>
-
-                    أخبرني بما تحتاج، ولنبدأ من الفكرة.
-
-                </p>
-
 
                 <a
-                    href="mailto:ammar506070@gmail.com"
-                    class="btn btn-primary">
-
-                    أرسل رسالة
-
+                    href="../index.html#hero"
+                    class="back-to-top"
+                >
+                    ↑ العودة للأعلى
                 </a>
 
             </div>
 
-
         </div>
 
-    </div>
+    </footer>
 
-</section>
 
+    <!-- ===========================================================
+         JavaScript
+    ============================================================ -->
 
-<!-- ===========================================================
-     Final CTA
-=========================================================== -->
+    <script src="../assets/js/language.js"></script>
 
-<section class="services reveal">
+    <script src="../assets/js/app.js"></script>
 
-    <div class="container">
-
-        <div class="section-header">
-
-            <span class="section-badge">
-
-                Collaboration
-
-            </span>
-
-            <h2>
-
-                جاهز لفكرة جديدة
-
-            </h2>
-
-            <p>
-
-                سواء كان مشروعك يحتاج إلى استراتيجية تسويقية،
-                محتوى إبداعي، أو توظيف الذكاء الاصطناعي في الإنتاج،
-                يمكننا البدء بخطوة بسيطة.
-
-            </p>
-
-            <a
-                href="mailto:ammar506070@gmail.com"
-                class="btn btn-primary">
-
-                تواصل معي الآن
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-</main>
-
-
-<!-- ===========================================================
-     Footer
-=========================================================== -->
-
-<footer class="footer">
-
-    <div class="container">
-
-        <div class="footer-grid">
-
-
-            <div class="footer-brand">
-
-                <img
-                    src="../assets/images/logo/logo.png"
-                    alt="Ammar Sharhan Logo"
-                    loading="lazy">
-
-                <h3>
-
-                    عمار شرهان
-
-                </h3>
-
-                <p>
-
-                    متخصص تسويق رقمي وصناعة محتوى بالذكاء الاصطناعي.
-
-                </p>
-
-            </div>
-
-
-            <div class="footer-links">
-
-                <h4>
-
-                    استكشف
-
-                </h4>
-
-                <ul>
-
-                    <li>
-                        <a href="../index.html#hero">
-                            الرئيسية
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="../index.html#about">
-                            من أنا
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="../index.html#skills">
-                            المهارات
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="../index.html#services">
-                            الخدمات
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="../index.html#projects">
-                            المشاريع
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="../index.html#experience">
-                            الخبرات
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="../index.html#contact">
-                            تواصل
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <div class="footer-contact">
-
-                <h4>
-
-                    معلومات التواصل
-
-                </h4>
-
-                <p>
-                    📧 ammar506070@gmail.com
-                </p>
-
-                <p>
-                    📱 +967 771 202 003
-                </p>
-
-                <p>
-                    📍 صنعاء، اليمن
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-        <div class="footer-bottom">
-
-            <p>
-
-                © 2026 Ammar Sharhan — جميع الحقوق محفوظة.
-
-            </p>
-
-
-            <a
-                href="../index.html#hero"
-                class="back-to-top">
-
-                ↑ العودة للأعلى
-
-            </a>
-
-        </div>
-
-    </div>
-
-</footer>
-
-
-<!-- ===========================================================
-     JavaScript
-=========================================================== -->
-
-<script src="../assets/js/app.js"></script>
 
 </body>
 
