@@ -1,538 +1,12 @@
-/* ===========================================================
+/* =========================================================
    PROJECTS PAGE
    Ammar Sharhan Portfolio
-=========================================================== */
+========================================================= */
 
 
-/* ===========================================================
+/* =========================================================
    Page Hero
-=========================================================== */
-
-.page-hero{
-
-    padding:140px 0 80px;
-
-    min-height:auto;
-
-}
-
-.page-hero .section-header{
-
-    max-width:850px;
-
-    margin-inline:auto;
-
-    text-align:center;
-
-}
-
-.page-hero .section-header h1{
-
-    margin-bottom:20px;
-
-}
-
-
-/* ===========================================================
-   Project Study Section
-=========================================================== */
-
-.project-study{
-
-    padding:80px 0;
-
-}
-
-
-/* ===========================================================
-   Project Study Card
-=========================================================== */
-
-.project-study-card{
-
-    display:grid;
-
-    grid-template-columns:
-        minmax(280px, .9fr)
-        minmax(0, 1.1fr);
-
-    gap:40px;
-
-    padding:40px;
-
-    margin-bottom:40px;
-
-    background:var(--surface);
-
-    border:1px solid var(--border);
-
-    border-radius:28px;
-
-    box-shadow:var(--shadow-md);
-
-}
-
-
-/* ===========================================================
-   Project Image
-=========================================================== */
-
-.project-study-image{
-
-    width:100%;
-
-    min-height:320px;
-
-    overflow:hidden;
-
-    border-radius:22px;
-
-}
-
-.project-study-image img{
-
-    width:100%;
-
-    height:100%;
-
-    min-height:320px;
-
-    object-fit:cover;
-
-    display:block;
-
-}
-
-
-/* ===========================================================
-   Project Content
-=========================================================== */
-
-.project-study-content{
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-}
-
-.project-label{
-
-    display:inline-block;
-
-    margin-bottom:14px;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    letter-spacing:.04em;
-
-    color:var(--primary);
-
-}
-
-.project-study-content h2{
-
-    margin:0 0 10px;
-
-    font-size:34px;
-
-    line-height:1.3;
-
-}
-
-.project-study-content h3{
-
-    margin:0 0 20px;
-
-    font-size:20px;
-
-    font-weight:600;
-
-    color:var(--text-secondary);
-
-}
-
-.project-study-content p{
-
-    margin:0;
-
-    line-height:2;
-
-    color:var(--text-secondary);
-
-}
-
-
-/* ===========================================================
-   Project Meta
-=========================================================== */
-
-.project-meta{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:10px;
-
-    margin-top:24px;
-
-}
-
-.project-meta span{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:7px 13px;
-
-    border-radius:999px;
-
-    background:var(--surface-alt);
-
-    border:1px solid var(--border);
-
-    font-size:13px;
-
-    color:var(--text-secondary);
-
-}
-
-
-/* ===========================================================
-   Project Details
-=========================================================== */
-
-.project-study-details{
-
-    grid-column:1 / -1;
-
-    padding-top:32px;
-
-    border-top:1px solid var(--border);
-
-}
-
-.project-study-details h3{
-
-    margin:0 0 20px;
-
-    font-size:21px;
-
-}
-
-.project-study-details ul{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:14px 35px;
-
-    margin:0;
-
-    padding:0;
-
-    list-style:none;
-
-}
-
-.project-study-details li{
-
-    position:relative;
-
-    padding-right:22px;
-
-    line-height:1.9;
-
-    color:var(--text-secondary);
-
-}
-
-.project-study-details li::before{
-
-    content:"✓";
-
-    position:absolute;
-
-    right:0;
-
-    top:0;
-
-    color:var(--primary);
-
-    font-weight:700;
-
-}
-
-
-/* ===========================================================
-   Project Highlight
-=========================================================== */
-
-.project-highlight{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    margin-top:28px;
-
-    padding:16px 20px;
-
-    border-radius:16px;
-
-    background:var(--surface-alt);
-
-    border:1px solid var(--border);
-
-}
-
-.project-highlight strong{
-
-    color:var(--primary);
-
-}
-
-.project-highlight span{
-
-    color:var(--text-secondary);
-
-}
-
-
-/* ===========================================================
-   Project Next
-=========================================================== */
-
-.project-next{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    margin-top:14px;
-
-}
-
-.project-next span{
-
-    color:var(--text-secondary);
-
-}
-
-.project-next strong{
-
-    color:var(--primary);
-
-}
-
-
-/* ===========================================================
-   Creative Work
-=========================================================== */
-
-.creative-work{
-
-    padding:90px 0;
-
-}
-
-.creative-work .section-header{
-
-    max-width:760px;
-
-    margin-inline:auto;
-
-    text-align:center;
-
-}
-
-
-/* ===========================================================
-   Projects Page CTA
-=========================================================== */
-
-.projects-page-cta{
-
-    padding:90px 0;
-
-}
-
-
-/* ===========================================================
-   Mobile
-=========================================================== */
-
-@media (max-width:992px){
-
-    .project-study-card{
-
-        grid-template-columns:1fr;
-
-        padding:30px;
-
-    }
-
-    .project-study-image{
-
-        min-height:280px;
-
-    }
-
-    .project-study-image img{
-
-        min-height:280px;
-
-    }
-
-    .project-study-details{
-
-        grid-column:auto;
-
-    }
-
-}
-
-
-@media (max-width:768px){
-
-    .page-hero{
-
-        padding:120px 0 60px;
-
-    }
-
-    .project-study{
-
-        padding:50px 0;
-
-    }
-
-    .project-study-card{
-
-        gap:28px;
-
-        padding:24px;
-
-        border-radius:22px;
-
-    }
-
-    .project-study-image{
-
-        min-height:230px;
-
-        border-radius:18px;
-
-    }
-
-    .project-study-image img{
-
-        min-height:230px;
-
-    }
-
-    .project-study-content h2{
-
-        font-size:28px;
-
-    }
-
-    .project-study-content h3{
-
-        font-size:18px;
-
-    }
-
-    .project-study-content p{
-
-        font-size:15px;
-
-    }
-
-    .project-study-details ul{
-
-        grid-template-columns:1fr;
-
-        gap:10px;
-
-    }
-
-    .project-highlight{
-
-        align-items:flex-start;
-
-        flex-direction:column;
-
-        gap:5px;
-
-    }
-
-    .project-next{
-
-        flex-wrap:wrap;
-
-    }
-
-}
-
-
-@media (max-width:576px){
-
-    .page-hero{
-
-        padding:110px 0 45px;
-
-    }
-
-    .project-study-card{
-
-        padding:20px;
-
-    }
-
-    .project-study-content h2{
-
-        font-size:25px;
-
-    }
-
-    .project-study-details h3{
-
-        font-size:19px;
-
-    }
-
-    .project-meta{
-
-        gap:7px;
-
-    }
-
-    .project-meta span{
-
-        font-size:12px;
-
-        padding:6px 10px;
-
-    }
-
-}
-/* ===========================================================
-   Projects Page Hero
-=========================================================== */
+========================================================= */
 
 .page-hero {
     min-height: auto;
@@ -540,5 +14,419 @@
 }
 
 .page-hero .section-header {
+    max-width: 850px;
+    margin-inline: auto;
     margin-bottom: 0;
+    text-align: center;
+}
+
+.page-hero .section-header h1 {
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   Project Study Section
+========================================================= */
+
+.project-study {
+    padding: 80px 0;
+}
+
+
+/* =========================================================
+   Project Study Card
+========================================================= */
+
+.project-study-card {
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 0.9fr)
+        minmax(0, 1.1fr);
+
+    gap: 40px;
+
+    padding: 40px;
+    margin-bottom: 40px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 28px;
+
+    box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   Project Image
+========================================================= */
+
+.project-study-image {
+    width: 100%;
+    min-height: 320px;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+}
+
+.project-study-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   Project Content
+========================================================= */
+
+.project-study-content {
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-label {
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+
+    color: var(--primary);
+}
+
+.project-study-content h2 {
+    margin: 0 0 10px;
+
+    font-size: 34px;
+    line-height: 1.3;
+}
+
+.project-study-content h3 {
+    margin: 0 0 20px;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    color: var(--text-secondary);
+}
+
+.project-study-content p {
+    margin: 0;
+
+    line-height: 2;
+
+    color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   Project Meta
+========================================================= */
+
+.project-meta {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 24px;
+}
+
+.project-meta span {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 7px 13px;
+
+    border-radius: 999px;
+
+    background: var(--surface-alt);
+
+    border: 1px solid var(--border);
+
+    font-size: 13px;
+
+    color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   Project Details
+========================================================= */
+
+.project-study-details {
+    grid-column: 1 / -1;
+
+    padding-top: 32px;
+
+    border-top: 1px solid var(--border);
+}
+
+.project-study-details h3 {
+    margin: 0 0 20px;
+
+    font-size: 21px;
+}
+
+.project-study-details ul {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px 35px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.project-study-details li {
+    position: relative;
+
+    padding-right: 22px;
+
+    line-height: 1.9;
+
+    color: var(--text-secondary);
+}
+
+.project-study-details li::before {
+    content: "✓";
+
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    color: var(--primary);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   Project Highlight
+========================================================= */
+
+.project-highlight {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 28px;
+    padding: 16px 20px;
+
+    border-radius: 16px;
+
+    background: var(--surface-alt);
+
+    border: 1px solid var(--border);
+}
+
+.project-highlight strong {
+    color: var(--primary);
+}
+
+.project-highlight span {
+    color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   Project Next
+========================================================= */
+
+.project-next {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 14px;
+}
+
+.project-next span {
+    color: var(--text-secondary);
+}
+
+.project-next strong {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   Creative Work
+========================================================= */
+
+.creative-work {
+    padding: 90px 0;
+}
+
+.creative-work .section-header {
+    max-width: 760px;
+
+    margin-inline: auto;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   Projects Page CTA
+========================================================= */
+
+.projects-page-cta {
+    padding: 90px 0;
+}
+
+
+/* =========================================================
+   Responsive
+========================================================= */
+
+
+/* =========================================================
+   Tablet
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .project-study-card {
+        grid-template-columns: 1fr;
+
+        padding: 30px;
+    }
+
+    .project-study-image {
+        min-height: 280px;
+    }
+
+    .project-study-image img {
+        min-height: 280px;
+    }
+
+    .project-study-details {
+        grid-column: auto;
+    }
+
+}
+
+
+/* =========================================================
+   Mobile
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .page-hero {
+        padding: 120px 0 60px;
+    }
+
+    .project-study {
+        padding: 50px 0;
+    }
+
+    .project-study-card {
+        gap: 28px;
+
+        padding: 24px;
+
+        border-radius: 22px;
+    }
+
+    .project-study-image {
+        min-height: 230px;
+
+        border-radius: 18px;
+    }
+
+    .project-study-image img {
+        min-height: 230px;
+    }
+
+    .project-study-content h2 {
+        font-size: 28px;
+    }
+
+    .project-study-content h3 {
+        font-size: 18px;
+    }
+
+    .project-study-content p {
+        font-size: 15px;
+    }
+
+    .project-study-details ul {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .project-highlight {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .project-next {
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* =========================================================
+   Small Mobile
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .page-hero {
+        padding: 110px 0 45px;
+    }
+
+    .project-study-card {
+        padding: 20px;
+    }
+
+    .project-study-content h2 {
+        font-size: 25px;
+    }
+
+    .project-study-details h3 {
+        font-size: 19px;
+    }
+
+    .project-meta {
+        gap: 7px;
+    }
+
+    .project-meta span {
+        font-size: 12px;
+
+        padding: 6px 10px;
+    }
+
 }
