@@ -2494,3 +2494,68 @@ body.dark-mode .contact-info-icon {
         font-size: 12px !important;
     }
 }
+/* =========================================================
+   LEAD FORM STYLING
+========================================================= */
+
+.contact-lead-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.contact-lead-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contact-lead-form label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--contact-text);
+}
+
+.contact-lead-form input,
+.contact-lead-form select,
+.contact-lead-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(43, 39, 124, 0.15);
+    background: var(--contact-surface);
+    color: var(--contact-text);
+    font-family: inherit;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-lead-form select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%232b277c' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: left 12px center;
+}
+
+.contact-lead-form input:focus,
+.contact-lead-form select:focus,
+.contact-lead-form textarea:focus {
+    outline: none;
+    border-color: var(--contact-primary);
+    box-shadow: 0 0 0 3px rgba(43, 39, 124, 0.12);
+}
+
+/* Dark Mode Overrides for Form */
+body.dark-mode .contact-lead-form input,
+body.dark-mode .contact-lead-form select,
+body.dark-mode .contact-lead-form textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+body.dark-mode .contact-lead-form select option {
+    background: #111827;
+    color: #ffffff;
+}
