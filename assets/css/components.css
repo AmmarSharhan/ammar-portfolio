@@ -1345,8 +1345,180 @@ body.dark-mode .footer-contact p {
     color: #cbd5e1;
 }
 
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
 
+.blog-card {
+    background: var(--bg-card, #ffffff);
+    padding: 1.8rem;
+    border-radius: var(--radius-lg, 12px);
+    border: 1px solid var(--border-color, #e5e7eb);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.blog-category {
+    color: var(--primary-color, #4f46e5);
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.blog-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.blog-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted, #6b7280);
+    line-height: 1.6;
+}
+
+.blog-link {
+    color: var(--primary-color, #4f46e5);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.blog-actions {
+    text-align: center;
+}
 /* ===========================================================
-   END OF COMPONENTS
+   HOME BLOG SECTION (2x2 GRID & NO GLOW)
 =========================================================== */
-```
+
+/* توزيع 4 بطاقات (بطاقتين في كل صف) */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* بطاقتين تجاوريتين */
+    gap: 2rem;
+    max-width: 1050px; /* عرض يتناسب مع عرض بطاقتين بشكل متناسق */
+    margin: 0 auto 2.5rem;
+}
+
+.blog-card {
+    position: relative;
+    padding: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg, 20px);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-normal, 0.35s ease), box-shadow var(--transition-normal, 0.35s ease);
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+/* إخفاء شعاع الماوس والتوهج الخلفي في قسم المدونة نهائياً */
+.blog-section .cursor-glow,
+#blog .cursor-glow,
+.blog-card::before,
+.blog-card::after {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    background: none !important;
+}
+
+/* تجاوب البطاقات على الهواتف والشاشات الصغيرة */
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr; /* تحويلها لبطاقة واحدة بالصف في الهواتف */
+        gap: 1.25rem;
+    }
+}
+/* ===========================================================
+   PROJECT CARD LINK STYLE (MATCHING BLOG STYLE)
+=========================================================== */
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.project-link svg {
+    transition: transform 0.25s ease;
+    stroke: currentColor;
+}
+
+/* حركة السهم عند تحريك الماوس للتركيز والوضوح */
+.project-link:hover {
+    color: var(--primary-hover, #1d1858);
+}
+
+.project-link:hover svg {
+    transform: translateX(-5px); /* تحريك السهم باتجاه اليسار */
+}
+/* ===========================================================
+   UNIFIED CARD LINKS STYLE (PROJECTS, BLOG, SERVICES)
+=========================================================== */
+
+/* توحيد الشكل واللون الأساسي لجميع روابط البطاقات */
+.blog-link,
+.project-link,
+.service-link,
+.card-link,
+.blog-card a,
+.project-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary) !important; /* نفس لون رابط المدونة */
+    text-decoration: none;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+/* توحيد لون وتأثير السهم المصاحب للرابط */
+.blog-link svg,
+.project-link svg,
+.service-link svg,
+.card-link svg,
+.blog-card a svg,
+.project-card a svg {
+    transition: transform 0.25s ease;
+    stroke: var(--primary) !important;
+}
+
+/* التأثير عند التمرير (Hover) لجميع البطاقات */
+.blog-link:hover,
+.project-link:hover,
+.service-link:hover,
+.card-link:hover,
+.blog-card a:hover,
+.project-card a:hover {
+    color: var(--primary-hover, var(--primary)) !important;
+    opacity: 0.85;
+}
+
+.blog-link:hover svg,
+.project-link:hover svg,
+.service-link:hover svg,
+.card-link:hover svg,
+.blog-card a:hover svg,
+.project-card a:hover svg {
+    transform: translateX(-5px); /* تحريك السهم لليسار في الواجهة العربية */
+}

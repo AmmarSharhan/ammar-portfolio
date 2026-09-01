@@ -1,13 +1,11 @@
 /* ===========================================================
    Ammar Sharhan Portfolio
-   app.js
+   app.js - Unified & Integrated File
 =========================================================== */
-
 
 /* ==========================================
    Global Elements
 ========================================== */
-
 const header = document.querySelector(".header");
 const menuToggle = document.getElementById("menuToggle");
 const nav = document.querySelector(".nav");
@@ -15,741 +13,338 @@ const navLinks = document.querySelectorAll(".nav a");
 const sections = document.querySelectorAll("section[id]");
 const reveals = document.querySelectorAll(".reveal");
 
-
 /* ==========================================
-   Header Scroll
+   1. Header Scroll
 ========================================== */
-
-function initHeaderScroll(){
-
-    if(!header) return;
+function initHeaderScroll() {
+    if (!header) return;
 
     const updateHeader = () => {
-
-        header.classList.toggle(
-            "scrolled",
-            window.scrollY > 20
-        );
-
+        header.classList.toggle("scrolled", window.scrollY > 20);
     };
 
     updateHeader();
-
-    window.addEventListener(
-        "scroll",
-        updateHeader,
-        { passive:true }
-    );
-
+    window.addEventListener("scroll", updateHeader, { passive: true });
 }
 
-
 /* ==========================================
-   Mobile Navigation
+   2. Mobile Navigation
 ========================================== */
-
-function initMobileMenu(){
-
-    if(!menuToggle || !nav) return;
+function initMobileMenu() {
+    if (!menuToggle || !nav) return;
 
     const closeMenu = () => {
-
-        nav.classList.remove("nav-open");
-
+        nav.classList.remove("nav-open", "active");
         document.body.classList.remove("menu-open");
-
         menuToggle.classList.remove("active");
-
         menuToggle.textContent = "☰";
-
     };
 
-
-    menuToggle.addEventListener("click",(event)=>{
-
+    menuToggle.addEventListener("click", (event) => {
         event.stopPropagation();
-
-        const isOpen =
-            nav.classList.toggle("nav-open");
-
-        document.body.classList.toggle(
-            "menu-open",
-            isOpen
-        );
-
-        menuToggle.classList.toggle(
-            "active",
-            isOpen
-        );
-
-        menuToggle.textContent =
-            isOpen ? "✕" : "☰";
-
+        const isOpen = nav.classList.toggle("nav-open");
+        nav.classList.toggle("active", isOpen);
+        document.body.classList.toggle("menu-open", isOpen);
+        menuToggle.classList.toggle("active", isOpen);
+        menuToggle.textContent = isOpen ? "✕" : "☰";
     });
-
 
     navLinks.forEach(link => {
-
-        link.addEventListener("click",closeMenu);
-
+        link.addEventListener("click", closeMenu);
     });
 
-
-    document.addEventListener("click",(event)=>{
-
-        const clickedInsideMenu =
-            nav.contains(event.target) ||
-            menuToggle.contains(event.target);
-
-        if(
-            !clickedInsideMenu &&
-            nav.classList.contains("nav-open")
-        ){
-
+    document.addEventListener("click", (event) => {
+        const clickedInsideMenu = nav.contains(event.target) || menuToggle.contains(event.target);
+        if (!clickedInsideMenu && (nav.classList.contains("nav-open") || nav.classList.contains("active"))) {
             closeMenu();
-
         }
-
     });
 
-
-    window.addEventListener("resize",()=>{
-
-        if(window.innerWidth > 768){
-
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
             closeMenu();
-
         }
-
     });
-
 }
 
-
 /* ==========================================
-   Active Navigation
+   3. Active Navigation
 ========================================== */
-
-function initActiveNavigation(){
-
-    if(!sections.length || !navLinks.length) return;
-
+function initActiveNavigation() {
+    if (!sections.length || !navLinks.length) return;
 
     const updateActiveNavigation = () => {
-
         let current = "";
-
         sections.forEach(section => {
-
-            const sectionTop =
-                section.offsetTop - 140;
-
-            if(window.scrollY >= sectionTop){
-
+            const sectionTop = section.offsetTop - 140;
+            if (window.scrollY >= sectionTop) {
                 current = section.id;
-
             }
-
         });
-
 
         navLinks.forEach(link => {
-
             link.classList.toggle(
-
                 "active",
-
-                link.getAttribute("href") ===
-                "#" + current
-
+                link.getAttribute("href") === "#" + current
             );
-
         });
-
     };
-
 
     updateActiveNavigation();
-
-
-    window.addEventListener(
-        "scroll",
-        updateActiveNavigation,
-        { passive:true }
-    );
-
+    window.addEventListener("scroll", updateActiveNavigation, { passive: true });
 }
 
-
 /* ==========================================
-   Scroll Reveal
+   4. Scroll Reveal
 ========================================== */
+function initReveal() {
+    if (!reveals.length) return;
 
-function initReveal(){
-
-    if(!reveals.length) return;
-
-
-    const observer =
-        new IntersectionObserver(
-
-            (entries) => {
-
-                entries.forEach(entry => {
-
-                    if(entry.isIntersecting){
-
-                        entry.target.classList.add(
-                            "show"
-                        );
-
-                        observer.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                });
-
-            },
-
-            {
-                threshold:0.15
-            }
-
-        );
-
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.15 }
+    );
 
     reveals.forEach(item => {
-
         observer.observe(item);
-
     });
-
 }
 
-
 /* ==========================================
-   Back To Top
+   5. Back To Top
 ========================================== */
+function initBackToTop() {
+    const backToTop = document.getElementById("backToTop") || document.querySelector(".back-to-top");
+    const footer = document.querySelector(".footer");
 
-function initBackToTop(){
-
-    const backToTop =
-        document.getElementById("backToTop");
-
-    const footer =
-        document.querySelector(".footer");
-
-    if(!backToTop) return;
-
+    if (!backToTop) return;
 
     const updateBackToTop = () => {
-
-        const footerVisible =
-            footer &&
-            footer.getBoundingClientRect().top <=
-            window.innerHeight;
-
-
-        if(
-            window.scrollY > 500 &&
-            !footerVisible
-        ){
-
+        const footerVisible = footer && footer.getBoundingClientRect().top <= window.innerHeight;
+        if (window.scrollY > 500 && !footerVisible) {
             backToTop.classList.add("show");
-
-        }else{
-
+        } else {
             backToTop.classList.remove("show");
-
         }
-
     };
-
 
     updateBackToTop();
+    window.addEventListener("scroll", updateBackToTop, { passive: true });
 
-
-    window.addEventListener(
-        "scroll",
-        updateBackToTop,
-        { passive:true }
-    );
-
-
-    backToTop.addEventListener("click",()=>{
-
+    backToTop.addEventListener("click", (e) => {
+        e.preventDefault();
         window.scrollTo({
-
-            top:0,
-
-            behavior:"smooth"
-
+            top: 0,
+            behavior: "smooth"
         });
-
     });
-
 }
 
-
 /* ==========================================
-   Scroll Progress
+   6. Scroll Progress
 ========================================== */
-
-function initScrollProgress(){
-
-    const progress =
-        document.querySelector(".scroll-progress");
-
-    if(!progress) return;
-
+function initScrollProgress() {
+    const progress = document.querySelector(".scroll-progress");
+    if (!progress) return;
 
     const updateProgress = () => {
+        const scrollTop = window.scrollY;
+        const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
 
-        const scrollTop =
-            window.scrollY;
-
-        const documentHeight =
-            document.documentElement.scrollHeight -
-            window.innerHeight;
-
-
-        if(documentHeight <= 0){
-
+        if (documentHeight <= 0) {
             progress.style.width = "0%";
-
             return;
-
         }
 
-
-        const percentage =
-            Math.min(
-                (scrollTop / documentHeight) * 100,
-                100
-            );
-
-
-        progress.style.width =
-            percentage + "%";
-
+        const percentage = Math.min((scrollTop / documentHeight) * 100, 100);
+        progress.style.width = percentage + "%";
     };
-
 
     updateProgress();
-
-
-    window.addEventListener(
-        "scroll",
-        updateProgress,
-        { passive:true }
-    );
-
+    window.addEventListener("scroll", updateProgress, { passive: true });
 }
 
-
 /* ==========================================
-   Loading Screen
+   7. Loading Screen
 ========================================== */
+function initLoader() {
+    const loader = document.querySelector(".loader");
+    if (!loader) return;
 
-function initLoader(){
-
-    const loader =
-        document.querySelector(".loader");
-
-    if(!loader) return;
-
-
-    document.body.classList.remove(
-        "page-loaded"
-    );
-
+    document.body.classList.remove("page-loaded");
 
     const hideLoader = () => {
-
-        setTimeout(()=>{
-
+        setTimeout(() => {
             loader.classList.add("hide");
-
-            document.body.classList.add(
-                "page-loaded"
-            );
-
-        },500);
-
+            document.body.classList.add("page-loaded");
+        }, 500);
     };
 
-
-    if(document.readyState === "complete"){
-
+    if (document.readyState === "complete") {
         hideLoader();
-
-    }else{
-
-        window.addEventListener(
-            "load",
-            hideLoader,
-            { once:true }
-        );
-
+    } else {
+        window.addEventListener("load", hideLoader, { once: true });
     }
-
 }
 
-
 /* ==========================================
-   Cursor Glow
+   8. Cursor Glow
 ========================================== */
+function initCursorGlow() {
+    const glow = document.querySelector(".cursor-glow");
+    if (!glow) return;
 
-function initCursorGlow(){
-
-    const glow =
-        document.querySelector(".cursor-glow");
-
-    if(!glow) return;
-
-
-    if(
-        window.matchMedia("(hover:none)").matches
-    ){
-
+    if (window.matchMedia("(hover:none)").matches) {
         glow.style.display = "none";
-
         return;
-
     }
 
-
-    document.addEventListener(
-        "mousemove",
-        (event) => {
-
-            glow.style.opacity = ".9";
-
-            glow.style.left =
-                event.clientX + "px";
-
-            glow.style.top =
-                event.clientY + "px";
-
-        }
-    );
-
-
-    document.addEventListener(
-        "mouseleave",
-        () => {
-
-            glow.style.opacity = "0";
-
-        }
-    );
-
-}
-
-
-/* ==========================================
-   Theme Toggle
-========================================== */
-
-function initTheme(){
-
-    const btn =
-        document.getElementById("themeToggle");
-
-    if(!btn) return;
-
-
-    const savedTheme =
-        localStorage.getItem("theme");
-
-
-    if(savedTheme === "dark"){
-
-        document.body.classList.add(
-            "dark-mode"
-        );
-
-        btn.textContent = "☀️";
-
-    }else{
-
-        btn.textContent = "🌙";
-
-    }
-
-
-    btn.addEventListener("click",()=>{
-
-        document.body.classList.toggle(
-            "dark-mode"
-        );
-
-
-        const dark =
-            document.body.classList.contains(
-                "dark-mode"
-            );
-
-
-        btn.textContent =
-            dark ? "☀️" : "🌙";
-
-
-        localStorage.setItem(
-
-            "theme",
-
-            dark ? "dark" : "light"
-
-        );
-
+    document.addEventListener("mousemove", (event) => {
+        glow.style.opacity = ".9";
+        glow.style.left = event.clientX + "px";
+        glow.style.top = event.clientY + "px";
     });
 
+    document.addEventListener("mouseleave", () => {
+        glow.style.opacity = "0";
+    });
 }
 
+/* ==========================================
+   9. Theme Toggle
+========================================== */
+function initTheme() {
+    const btn = document.getElementById("themeToggle");
+    if (!btn) return;
+
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark" || savedTheme === "dark-theme") {
+        document.body.classList.add("dark-mode");
+        btn.textContent = "☀️";
+    } else if (savedTheme === "light" || savedTheme === "light-theme") {
+        document.body.classList.remove("dark-mode");
+        btn.textContent = "🌙";
+    } else {
+        btn.textContent = "🌙";
+    }
+
+    btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        const dark = document.body.classList.contains("dark-mode");
+        btn.textContent = dark ? "☀️" : "🌙";
+        localStorage.setItem("theme", dark ? "dark" : "light");
+    });
+}
 
 /* ==========================================
-   Image Lazy Fade
+   10. Image Lazy Fade
 ========================================== */
-
-function initImages(){
-
-    const images =
-        document.querySelectorAll("img");
-
-    if(!images.length) return;
-
+function initImages() {
+    const images = document.querySelectorAll("img");
+    if (!images.length) return;
 
     images.forEach(img => {
-
-        if(img.complete){
-
+        if (img.complete) {
             img.classList.add("loaded");
-
-        }else{
-
-            img.addEventListener(
-
-                "load",
-
-                () => {
-
-                    img.classList.add(
-                        "loaded"
-                    );
-
-                },
-
-                { once:true }
-
-            );
-
+        } else {
+            img.addEventListener("load", () => {
+                img.classList.add("loaded");
+            }, { once: true });
         }
-
     });
-
 }
 
-
 /* ==========================================
-   Animated Counters
+   11. Animated Counters
 ========================================== */
+function initCounters() {
+    const counters = document.querySelectorAll(".stat-number");
+    if (!counters.length) return;
 
-function initCounters(){
+    const observer = new IntersectionObserver(
+        (entries, counterObserver) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
 
-    const counters =
-        document.querySelectorAll(
-            ".stat-number"
-        );
+                const counter = entry.target;
+                const target = Number(counter.dataset.target);
 
-    if(!counters.length) return;
+                if (!Number.isFinite(target)) {
+                    counterObserver.unobserve(counter);
+                    return;
+                }
 
+                const duration = 2800;
+                const startTime = performance.now();
 
-    const observer =
-        new IntersectionObserver(
+                function updateCounter(currentTime) {
+                    const progress = Math.min((currentTime - startTime) / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    counter.textContent = Math.round(target * eased);
 
-            (entries, counterObserver) => {
-
-                entries.forEach(entry => {
-
-                    if(!entry.isIntersecting) return;
-
-
-                    const counter =
-                        entry.target;
-
-
-                    const target =
-                        Number(
-                            counter.dataset.target
-                        );
-
-
-                    if(!Number.isFinite(target)){
-
-                        counterObserver.unobserve(
-                            counter
-                        );
-
-                        return;
-
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
                     }
+                }
 
-
-                    const duration = 2800;
-
-                    const startTime =
-                        performance.now();
-
-
-                    function updateCounter(
-                        currentTime
-                    ){
-
-                        const progress =
-                            Math.min(
-
-                                (
-                                    currentTime -
-                                    startTime
-                                ) / duration,
-
-                                1
-
-                            );
-
-
-                        const eased =
-                            1 -
-                            Math.pow(
-                                1 - progress,
-                                3
-                            );
-
-
-                        counter.textContent =
-                            Math.round(
-                                target * eased
-                            );
-
-
-                        if(progress < 1){
-
-                            requestAnimationFrame(
-                                updateCounter
-                            );
-
-                        }else{
-
-                            counter.textContent =
-                                target;
-
-                        }
-
-                    }
-
-
-                    requestAnimationFrame(
-                        updateCounter
-                    );
-
-
-                    counterObserver.unobserve(
-                        counter
-                    );
-
-                });
-
-            },
-
-            {
-                threshold:0.6
-            }
-
-        );
-
+                requestAnimationFrame(updateCounter);
+                counterObserver.unobserve(counter);
+            });
+        },
+        { threshold: 0.6 }
+    );
 
     counters.forEach(counter => {
-
         observer.observe(counter);
-
     });
-
 }
 
-
 /* ==========================================
-   Initialize
+   12. Project Anchor Navigation
 ========================================== */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
-
-        initHeaderScroll();
-
-        initMobileMenu();
-
-        initActiveNavigation();
-
-        initReveal();
-
-        initBackToTop();
-
-        initScrollProgress();
-
-        initLoader();
-
-        initCursorGlow();
-
-        initTheme();
-
-        initImages();
-
-        initCounters();
-
-        initProjectAnchorNavigation();
-
-    }
-);
-
-/* ==========================================
-   Project Anchor Navigation
-========================================== */
-
 function initProjectAnchorNavigation() {
-
     const hash = window.location.hash;
-
     if (!hash) return;
 
     const target = document.querySelector(hash);
-
     if (!target) return;
 
     setTimeout(() => {
-
-        const header = document.querySelector(".header");
-
-        const headerHeight =
-            header ? header.offsetHeight : 0;
-
-        const targetPosition =
-            target.getBoundingClientRect().top +
-            window.scrollY -
-            headerHeight -
-            20;
+        const headerEl = document.querySelector(".header");
+        const headerHeight = headerEl ? headerEl.offsetHeight : 0;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
 
         window.scrollTo({
-
             top: targetPosition,
-
             behavior: "smooth"
-
         });
-
     }, 500);
-
 }
+
+/* ==========================================
+   Main Initialization
+========================================== */
+document.addEventListener("DOMContentLoaded", () => {
+    initHeaderScroll();
+    initMobileMenu();
+    initActiveNavigation();
+    initReveal();
+    initBackToTop();
+    initScrollProgress();
+    initLoader();
+    initCursorGlow();
+    initTheme();
+    initImages();
+    initCounters();
+    initProjectAnchorNavigation();
+});
